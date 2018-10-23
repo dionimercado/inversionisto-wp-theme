@@ -1,0 +1,735 @@
+/* @import url('https://use.fontawesome.com/releases/v5.3.1/css/all.css'); */
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,600,700');
+
+:root{
+  font-size: 10px;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  /* background-color: #006600 !important */
+  font-size: 1.6rem;
+}
+
+#wpadminbar {
+  display: none !important;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.section-title {
+  text-align: center;
+  max-width: 57rem;
+  margin: 8rem auto 5rem auto;
+}
+.section-title h4 {
+  font-size: 1.6rem;
+  text-transform: uppercase;
+}
+.section-title h2 {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  font-size: 2.8rem;
+  color: #3a4659;
+  text-transform: uppercase;
+}
+.section-title p {
+  font-family: 'Open Sans';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1.4rem;
+  color: #8593a9;
+  margin: 10px 0 55px;
+  line-height: 20px;
+}
+
+.top_bar_wrapper {
+  background-color: #c78f00 !important;
+}
+
+.top_bar, .top_bar a {
+  color: #ffffff !important;
+}
+
+
+.bg-light {
+  overflow: hidden;
+  background-color: #f6f6f6;
+}
+.bg-white {
+  overflow: hidden;
+  background-color: #fff;
+}
+.headerNav {
+  background-color: #fff;
+}
+.headerNav .navbar-nav .nav-link {
+  font-size: 1.4rem;
+}
+
+/* .hover_type_5 #access .menu > li>a {
+  color: #3a4659;
+  position: relative;
+  display: block;
+  -webkit-transition: color 0.1s, background-color 0.1s, padding 0.2s ease-in;
+  -o-transition: color 0.1s, background-color 0.1s, padding 0.2s ease-in;
+  transition: color 0.1s, background-color 0.1s, padding 0.2s ease-in;
+}
+
+.hover_type_5 #access .menu > li>a::before {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 3px;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  background-color: #fff;
+  -webkit-transform-origin: right top;
+      -ms-transform-origin: right top;
+          transform-origin: right top;
+  -webkit-transform: scale(0, 1);
+      -ms-transform: scale(0, 1);
+          transform: scale(0, 1);
+  -webkit-transition: color 0.1s, -webkit-transform 0.2s ease-out;
+  transition: color 0.1s, -webkit-transform 0.2s ease-out;
+  -o-transition: color 0.1s, transform 0.2s ease-out;
+  transition: color 0.1s, transform 0.2s ease-out;
+  transition: color 0.1s, transform 0.2s ease-out, -webkit-transform 0.2s ease-out;
+}
+
+.hover_type_5 #access .menu > li>a:hover::before {
+  -webkit-transform-origin: left top;
+      -ms-transform-origin: left top;
+          transform-origin: left top;
+      -webkit-transform: scale(1, 1);
+          -ms-transform: scale(1, 1);
+              transform: scale(1, 1);
+}
+
+.hover_type_5 #access .menu > li:hover>a {
+  border-bottom: 0 solid #006900 !important;
+}
+.hover_type_5 #access .menu > li.current-menu-item>a {
+  color: #d08d00;
+} */
+.hover_type_5 #access .menu > li:hover>a {
+    border-bottom: 0px solid #006900 !important;
+}
+@media screen and (min-width: 992px) {
+
+  #access ul.menu>li:last-child>a {
+    color: #fff !important;
+  }
+
+
+  #access ul.menu>li:last-child>a::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 30px;
+    background-color: #c59b2f;
+    position: absolute;
+    top: 50%;
+    margin-top: -15px;
+    left: 0;
+    border-radius: 4px;
+    z-index: -1;
+    transition: backgrounf-color 0.3s ease;
+  }
+
+  #access ul.menu>li:last-child>a:hover::after {
+    background-color: #297524;
+  }
+}
+
+
+
+
+
+.featured .property_listing_details,
+.recent-properties .property_listing_details {
+  margin-bottom: 10px;
+}
+
+.discover  {
+  position: relative;
+}
+.discover .boxes-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.discover .box {
+  width: 32.33%;
+  height: 300px;
+  text-align: center;
+  background-position: center;
+  background-size: cover;
+  transition: all .4s ease;
+  border-radius: 3px;
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.discover .box.big-box {
+  width: 66.1%;
+}
+
+@media screen and (max-width: 768px) {
+  .discover .boxes-row {
+    padding: 0 15px;
+    margin-bottom: 0;
+  }
+  .discover .box,
+  .discover .box.big-box {
+    width: 100%;
+    height: 150px;
+    margin-bottom: 1.5rem;
+  }
+  .recent-properties {
+    padding: 0 15px;
+  }
+}
+
+.discover .box a {
+  text-align: center;
+}
+
+.discover .box a::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  opacity: .3;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all .4s ease;
+  cursor: pointer;
+  border-radius: 3px;
+}
+.discover .box a:hover::before {
+  opacity: 0.15;
+}
+
+.discover .box h4 {
+  color: #fff;
+  font-size: 2.4rem;
+  font-weight: 600;
+  position: relative;
+  margin-bottom: 0.2rem;
+}
+.discover .box p {
+  color: rgba(255,255,255,.8);
+  font-size: 1.6rem;
+  position: relative;
+  margin-bottom: 3rem;
+}
+
+.home .adv_search_tab_item {
+  border: 1px solid #006600;
+  background: #006600;
+  border-right: 0;
+}
+.home .adv_search_tab_item a {
+  color: #fff;
+}
+
+.home .adv_search_tab_item.active {
+  background: #f2f2f2 !important;
+  border: 1px solid #f2f2f2;
+}
+.home .adv_search_tab_item.active a {
+  color: #006600;
+}
+
+#colophon {
+  background-color: #f2f2f2;
+}
+.widget-title-footer {
+  font-size: 1.6rem;
+  color: #297524;
+}
+
+.adv_extended_options_text {
+  background-color: #323840;
+  color: #ddd;
+  display: inline-block;
+  padding: 5px 8px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  font-size: 12px;
+  width: auto;
+}
+.adv_extended_options_text:hover {
+  color: #c59b2f;
+}
+
+.adv_extended_options_text {
+    background-color: #c99b02;
+    color: #fff !important;
+}
+
+ .wpresidence_button:hover {
+   background-color: #c59b2f !important;
+ }
+
+
+
+
+
+  .testimonials {
+    position: relative;
+    overflow: hidden;
+  }
+  .testimonials::before,
+  .testimonials::after {
+    left: 0;
+    z-index: 10;
+    width: 50%;
+    height: 70px;
+    content: '';
+    position: absolute;
+  }
+  .testimonials::before {
+    background-color: #ffffff;
+    height: 40px !important;
+    top: 0px;
+    bottom: auto;
+    border-top: undefinedpx undefined undefined;
+    border-right: undefinedpx undefined undefined;
+    border-radius: 0 0 40px 0 !important;
+  }
+
+  .testimonials::after {
+    background-color: #ffffff;
+    left: 50%;
+    height: 40px !important;
+    top: 0px;
+    bottom: auto;
+    border-top: undefinedpx undefined undefined;
+    border-left: undefinedpx undefined undefined;
+    border-radius: 0 0 0 40px !important;
+  }
+  .testimonials .section-title h2 {
+    /* font-size: 42px; */
+  }
+  .testimonials .testimonial-text {
+    line-height: 20px;
+    font-size: 15px !important;
+  }
+
+  .newsletter {
+    position: relative;
+    margin-bottom: 5rem;
+    padding: 0 15px;
+  }
+
+  .newsletter::before {
+    content: "";
+    position: absolute;
+    bottom: -5rem;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    background-color: #f2f2f2;
+  }
+  .newsletter .section-title h2{
+    font-size: 36px;
+  }
+
+
+  .newsletter-form{
+    max-width: 1110px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 5rem 2rem 10rem;
+    position: relative;
+    box-shadow: 0 1rem 5rem rgba(0,0,0,.12);
+  }
+  .newsletter-form form {
+    max-width: 55rem;
+    margin: auto;
+    background-color: #fff;
+    border-radius: 60px;
+    overflow: hidden;
+    border: 0;
+    box-shadow: 0 0 6px rgba(0,0,0,.1);
+  }
+  .newsletter-form form input {
+    border: unset;
+    box-shadow: unset;
+    box-shadow: unset;
+  }
+  .newsletter-form form button.btn-primary {
+    margin-right: -2px;
+    border: 0;
+    background-image: linear-gradient(to bottom, #c59b2f 0%, #ad8727 100%);
+    background-position: 0 !important;
+  }
+
+  @media screen and (max-width: 768px) {
+    .newsletter-form {
+      padding: 1rem 2rem 8rem;
+    }
+    .newsletter h2 {
+      font-size: 22px;
+    }
+  }
+
+  #colophon .social_sidebar_internal a {
+    background-color: transparent;
+    border-radius: 50%;
+    border: 1px solid #c59b2f;
+  }
+  #colophon #fourth .social_sidebar_internal a:hover {
+    background-color: #c59b2f !important;
+  }
+  #colophon .social_sidebar_internal a i{
+    color: #c69d32;
+  }
+
+.unit_details_x,
+.featured_div {
+  display: none;
+}
+
+
+.navigational_links {
+  display: none !important;
+}
+
+.owl-theme .owl-nav {
+  position: absolute;
+  left: 0;
+  top: 45%;
+  font-size: 100px;
+  color: #fff;
+  margin-top: 0;
+  width: 100%;
+}
+.owl-theme .owl-nav button{
+  position: absolute;
+  left: 30px;
+  top: 45%;
+  background-color: transparent !important;
+}
+
+.owl-theme .owl-nav .owl-next {
+  right: 30px;
+  left: unset;
+}
+
+
+.slick-dots {
+  display: none !important;
+}
+.form-control.open .filter_menu_trigger, .menu_user_tools {
+  color: #8593a9 !important;
+}
+#user_menu_open > li > a:hover,
+#user_menu_open > li > a:focus,
+.filter_menu li:hover,
+.sub-menu li:hover,
+#access .menu li:hover>a,
+#access .menu li:hover>a:active,
+#access .menu li:hover>a:focus {
+  color: #000;
+}
+
+.adv_search_slider span {
+  color: #cf9f11 !important;
+}
+
+.action_tag_wrapper {
+  background-color: #00780f;
+}
+.unit_more_x,
+.title_prop,
+.listing_filter_select.filter_county,
+.listing_actions .icon-fav,
+.listing_actions .compare-action,
+.search_wr_6.with_search_form_float #results,
+.post-type-archive-estate_agent .header_media.with_search_6,
+.single-estate_agent .header_media.with_search_6 {
+  display: none !important;
+}
+
+.post-type-archive-estate_agent .content_wrapper {
+  padding-top: 131px;
+}
+
+.agent-card {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  display: block;
+  margin-top: 20px;
+  padding: 15px 0;
+  overflow: hidden;
+  transition: all .3s ease;
+}
+.agent-card:hover {
+  box-shadow: 0 0 25px 1px rgba(0,0,0,.08);
+  border-color: transparent;
+}
+.agent-card-contacts {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 15px;
+}
+.agent-contact {
+  border: 1px solid #ddd;
+  border-radius: 30px;
+  display: inline-block;
+  padding: 0px 15px;
+  line-height: 30px;
+}
+.agent-contacts p {
+  margin-bottom: 10px;
+}
+.agent-contacts a {
+  display: flex;
+  align-items: center;
+}
+.contact-icon {
+  margin-right: 10px;
+  background-color: #cc9a00;
+  color: #fff;
+  border-radius: 50px;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 13px;
+}
+
+.agent-profile .listing_details {
+  display: none;
+}
+
+
+.property_listing {
+    position: relative;
+    margin-bottom: 30px;
+    border: 1px solid #dde4e9;
+    border-radius: 3px;
+    overflow: hidden;
+    font-size: 13px;
+    background-color: #ffffff;
+    max-width: 525px;
+    -webkit-transition: all 0.15s ease;
+    -moz-transition: all 0.15s ease;
+    -o-transition: all 0.15s ease;
+    transition: all 0.15s ease;
+    cursor: pointer;
+    float: left;
+}
+
+.property_listing picture{
+  overflow: hidden;
+  position: relative;
+  display: block;
+}
+.property_listing picture img {
+  transition: all .5s ease;
+}
+.property_listing a:hover picture img {
+  transform: scale(1.2);
+}
+
+.property_listing h4 {
+    padding: 0px 20px;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    float: left;
+    width: 100%;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 1.3em;
+    color: #3a4659;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.listing_unit_price {
+    position: relative;
+    margin-top: 5px;
+    color: #297524;
+    margin-left: 20px;
+    font-size: 17px;
+    line-height: 16px;
+    float: none;
+    display: block;
+    line-height: 30px;
+}
+
+.property_listing_details{
+  position: relative;
+  color: #3a4659;
+  width: 100%;
+  padding: 0 20px;
+  margin-bottom: 10px;
+
+  line-height: 22px;
+  width: 100%;
+  margin-bottom: 7px;
+  font-weight: 300;
+}
+
+.property_listing_details .inforoom,
+.property_location .inforoom {
+    background-image: url('../images/unit.png');
+    font-size: 14px;
+    line-height: 30px;
+    background-repeat: no-repeat;
+    background-position: 0px -1px;
+    margin-right: 15px;
+    padding-left: 23px;
+    color: #3a4659;
+    color:#8593a9;
+    font-size:13px;
+}
+
+.property_listing_details .infobath,
+.property_location .infobath {
+    background-image: url('../images/unit.png');
+    font-size: 14px;
+    line-height: 30px;
+    background-repeat: no-repeat;
+    background-position: -63px -1px;
+    margin-right: 12px;
+    padding-left: 20px;
+    color: #3a4659;
+    color:#8593a9;
+    font-size:13px;
+
+}
+
+.property_listing_details .infosize,
+.property_location .infosize {
+    background-image: url('../images/unit.png');
+    font-size: 14px;
+    line-height: 30px;
+    background-repeat: no-repeat;
+    background-position: -127px 0px;
+    margin-right: 5px;
+    padding-left: 20px;
+    color: #3a4659;
+    color:#8593a9;
+    font-size:13px;
+}
+
+.property_listing_details .infodate{
+    font-size: 14px;
+    line-height: 30px;
+    margin-right: 10px;
+    padding-left: 12px;
+    color: #3a4659;
+    color:#8593a9;
+    font-size:13px;
+}
+
+.property_listing_details .infodate .fa{
+    margin-right:5px;
+    color:#C2CBD9;
+}
+
+
+@media screen and (max-width: 992px) {
+  body.logged-in.admin-bar {
+    padding-top: 70px !important;
+  }
+  .mobile_header {
+    display: block;
+  }
+  .mobilemenu-close-user,
+  .mobilemenu-close,
+  .mobile_header i {
+    color: #000000 !important;
+  }
+  .agent-profile {
+    padding-top: 40px !important;
+  }
+  .profile-info {
+    text-align: center;
+  }
+  .profile-info img {
+    display: inline-block;
+  }
+  .agent-contacts {
+    text-align: center;
+    margin-top: 20px;
+  }
+  .agent-contacts span:not(.contact-icon),
+  .agent-contacts h3 {
+    display: none;
+  }
+  .agent-contacts p {
+    display: inline-block;
+  }
+  .wide .top_bar, .top_bar {
+    padding: 8px 15px 5px 15px;
+  }
+  .right-top-widet, .left-top-widet {
+    width: auto;
+  }
+  .right-top-widet {
+    margin-top: 0;
+  }
+  .post-type-archive-estate_agent .content_wrapper {
+    padding-top: 0;
+  }
+  .copyright {
+    margin-left: 15px !important;
+    width: 75% !important;
+  }
+  .subfooter_menu {
+    margin: 0 15px 0 0 !important;
+  }
+  .subfooter_menu li {
+    margin-left: 0 !important;
+    margin-bottom: 0 !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+
+  .agent-card {
+    text-align: center;
+  }
+  .agent-card img {
+    margin: 0 auto 15px auto;
+  }
+  .agent-card-contacts {
+    flex-direction: column;
+  }
+  .agent-contact {
+    margin-bottom: 10px;
+  }
+  .owl-item>div {
+    height: 118px !important;
+  }
+
+  .owl-theme .owl-nav {
+    top: 15%;
+    font-size: 50px;
+  }
+
+  .owl-theme .owl-nav button {
+    left: 10px;
+  }
+  .owl-theme .owl-nav .owl-next {
+    right: 10px;
+  }
+}
