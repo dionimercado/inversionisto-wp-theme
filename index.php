@@ -16,31 +16,30 @@ get_header();
         <p>These are the latest properties in the Sales category. You can create the list using the “latest listing shortcode” and show items by specific categories.</p>
       </div>
       <div class="row">
-
-      <?php
-      $featured = new WP_Query(array(
-        'post_type' => 'property',
-        'showposts' => 6,
-        'meta_query' => array(
-          array(
-            'key' => 'prop_featured',
-            'value' => '1'
+        <?php
+        $featured = new WP_Query(array(
+          'post_type' => 'property',
+          'showposts' => 6,
+          'meta_query' => array(
+            array(
+              'key' => 'prop_featured',
+              'value' => '1'
+            )
           )
-        )
-      ));
+        ));
 
-      while($featured->have_posts()) : $featured->the_post();
-      ?>
-      <div class="col-md-4">
-        <?php get_template_part('templates/property', 'listing') ?>
-      </div>
-      <div class="col-md-4">
-        <?php get_template_part('templates/property', 'listing') ?>
-      </div>
-      <div class="col-md-4">
-        <?php get_template_part('templates/property', 'listing') ?>
-      </div>
-      <?php endwhile; wp_reset_postdata() ?>
+        while($featured->have_posts()) : $featured->the_post();
+        ?>
+        <div class="col-md-4">
+          <?php get_template_part('templates/property', 'listing') ?>
+        </div>
+        <div class="col-md-4">
+          <?php get_template_part('templates/property', 'listing') ?>
+        </div>
+        <div class="col-md-4">
+          <?php get_template_part('templates/property', 'listing') ?>
+        </div>
+        <?php endwhile; wp_reset_postdata() ?>
       </div>
     </div>
   </section>
@@ -52,9 +51,9 @@ get_header();
         <p>These are the latest properties in the Sales category. You can create the list using the “latest listing shortcode” and show items by specific categories.</p>
       </div>
       <?php
-      if( have_rows('featured_categories') ):
+      if( have_rows('featured_categories', 71) ):
         $count = 0;
-        while ( have_rows('featured_categories') ) : the_row();
+        while ( have_rows('featured_categories', 71) ) : the_row();
           $count++;
           $category = get_term_by('id', get_sub_field('category'), 'prop_category');
       ?>
@@ -84,7 +83,35 @@ get_header();
       <p>These are the latest properties in the Sales category. You can create the list using the “latest listing shortcode” and show items by specific categories.</p>
     </div>
     <div class="container">
-      <?php echo do_shortcode('[recent_items action_ids="38" number="3" rownumber="3"]') ?>
+      <div class="row">
+        <?php
+        $properties = new WP_Query(array(
+          'post_type' => 'property',
+          'showposts' => 6
+        ));
+
+        while($properties->have_posts()) : $properties->the_post();
+        ?>
+        <div class="col-md-4">
+          <?php get_template_part('templates/property', 'listing') ?>
+        </div>
+        <div class="col-md-4">
+          <?php get_template_part('templates/property', 'listing') ?>
+        </div>
+        <div class="col-md-4">
+          <?php get_template_part('templates/property', 'listing') ?>
+        </div>
+        <div class="col-md-4">
+          <?php get_template_part('templates/property', 'listing') ?>
+        </div>
+        <div class="col-md-4">
+          <?php get_template_part('templates/property', 'listing') ?>
+        </div>
+        <div class="col-md-4">
+          <?php get_template_part('templates/property', 'listing') ?>
+        </div>
+        <?php endwhile; wp_reset_postdata() ?>
+      </div>
     </div>
   </section>
 
@@ -95,7 +122,23 @@ get_header();
       <h2><?php _e('Artículos de Interés') ?></h2>
     </div>
     <div class="container">
-      <?php echo do_shortcode('[slider_recent_items type="post" number="3" rownumber="3"]') ?>
+      <div class="row">
+        <?php
+        $posts = new WP_Query(array(
+          'post_type' => 'post',
+          'showposts' => 6
+        ));
+
+        while($posts->have_posts()) : $posts->the_post();
+        ?>
+        <div class="col-md-6">
+          <?php get_template_part('templates/blog', 'post') ?>
+        </div>
+        <div class="col-md-6">
+          <?php get_template_part('templates/blog', 'post') ?>
+        </div>
+        <?php endwhile; wp_reset_postdata() ?>
+      </div>
     </div>
   </section>
 
