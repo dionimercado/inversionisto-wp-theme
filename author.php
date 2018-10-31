@@ -60,21 +60,6 @@ if( $agent_info->profile_picture ) {
             <div class="col-md-4">
               <?php get_template_part('templates/property', 'listing') ?>
             </div>
-            <div class="col-md-4">
-              <?php get_template_part('templates/property', 'listing') ?>
-            </div>
-            <div class="col-md-4">
-              <?php get_template_part('templates/property', 'listing') ?>
-            </div>
-            <div class="col-md-4">
-              <?php get_template_part('templates/property', 'listing') ?>
-            </div>
-            <div class="col-md-4">
-              <?php get_template_part('templates/property', 'listing') ?>
-            </div>
-            <div class="col-md-4">
-              <?php get_template_part('templates/property', 'listing') ?>
-            </div>
           <?php endwhile; wp_reset_postdata(); ?>
           </div>
         </div>

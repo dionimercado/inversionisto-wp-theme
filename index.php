@@ -30,13 +30,7 @@ get_header();
 
         while($featured->have_posts()) : $featured->the_post();
         ?>
-        <div class="col-md-4">
-          <?php get_template_part('templates/property', 'listing') ?>
-        </div>
-        <div class="col-md-4">
-          <?php get_template_part('templates/property', 'listing') ?>
-        </div>
-        <div class="col-md-4">
+        <div class="col-md-4 mb-5">
           <?php get_template_part('templates/property', 'listing') ?>
         </div>
         <?php endwhile; wp_reset_postdata() ?>
@@ -92,22 +86,7 @@ get_header();
 
         while($properties->have_posts()) : $properties->the_post();
         ?>
-        <div class="col-md-4">
-          <?php get_template_part('templates/property', 'listing') ?>
-        </div>
-        <div class="col-md-4">
-          <?php get_template_part('templates/property', 'listing') ?>
-        </div>
-        <div class="col-md-4">
-          <?php get_template_part('templates/property', 'listing') ?>
-        </div>
-        <div class="col-md-4">
-          <?php get_template_part('templates/property', 'listing') ?>
-        </div>
-        <div class="col-md-4">
-          <?php get_template_part('templates/property', 'listing') ?>
-        </div>
-        <div class="col-md-4">
+        <div class="col-md-4 mb-5">
           <?php get_template_part('templates/property', 'listing') ?>
         </div>
         <?php endwhile; wp_reset_postdata() ?>
