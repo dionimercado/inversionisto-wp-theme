@@ -10,7 +10,7 @@ html {
 }
 
 body {
-  /* background-color: #006600 !important */
+  background-color: #f9f9f9;
   font-size: 1.6rem;
 }
 
@@ -67,6 +67,7 @@ a:hover {
 }
 .headerNav {
   background-color: #fff;
+  border-bottom: 1px solid #f0f0f0;
 }
 .headerNav .navbar-nav .nav-link {
   font-size: 1.4rem;
@@ -152,10 +153,7 @@ a:hover {
 
 
 
-.featured .property_listing_details,
-.recent-properties .property_listing_details {
-  margin-bottom: 10px;
-}
+
 
 .discover  {
   position: relative;
@@ -236,12 +234,97 @@ a:hover {
   margin-bottom: 3rem;
 }
 
+.footer {
+  border-top: 1px solid #ddd;
+  background-color: #f2f2f2;
+  padding: 5rem 0;
+  margin-top: 6rem;
+  color: #888;
+}
+.footer a {
+  color: #888;
+}
+.footer ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.footer .textwidget {
+  font-size: 1.3rem;
+  line-height: 2.2rem;
+  color: #888;
+}
+.footer .widgettitle {
+  font-size: 1.8rem;
+  color: #006900;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
 
+.footer .menu {
 
+}
+.footer .menu-item {
+  padding-left: 12px;
+  position: relative;
+}
+.footer .menu-item::before {
+  content: "\f054";
+  font-family: Font Awesome\ 5 Free;
+  font-weight: 900;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+  position: absolute;
+  left: 0;
+  top: 30%;
+  font-size: 1rem;
+  color: #888;
+}
+.footer .menu-item a {
+  color: #888;
+}
+.footer .menu-item a:hover {
+  color: #006900;
+}
 
 .widget-title-footer {
   font-size: 1.6rem;
   color: #297524;
+}
+
+.jetpack_widget_social_icons a {
+  background-color: transparent;
+  border-radius: 50%;
+  border: 1px solid #c59b2f !important;
+  width: 4rem !important;
+  height: 4rem !important;
+  padding: 11px 0px;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  margin-right: 1rem;
+}
+
+.jetpack_widget_social_icons a svg {
+  color: #c69d32;
+  width: 20px;
+}
+
+.jetpack_widget_social_icons a:hover {
+  background-color: #c59b2f !important;
+}
+.jetpack_widget_social_icons a:hover svg {
+  color: #fff;
+}
+
+.footer .copyright {
+  background-color: #e7e7e7;
+  font-size: 1.3rem;
 }
 
 .adv_extended_options_text {
@@ -267,17 +350,89 @@ a:hover {
    background-color: #c59b2f !important;
  }
 
+ .property-meta a {
+   color: #666;
+ }
 
+ .price_area {
+   color: #007800;
+   font-size: 30px;
+   padding: 8px 0px 0px 0px;
+   float: right;
+   font-weight: 600;
+   letter-spacing: -1px;
+ }
 
- .header_image {
-   position: relative;
-   width: 100%;
-   height: 580px;
-   background-position: center center;
-   background-repeat: no-repeat;
-   background-color: #444;
-   background-size: cover;
-   overflow: hidden;
+.page-header {
+  position: relative;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  color: #495057;
+  font-size: 3rem;
+  margin: 3rem 0;
+  text-align: left;
+}
+
+.page-header::after {
+  content: "";
+  position: absolute;
+  bottom: -1rem;
+  left: 0;
+  width: 8rem;
+  height: 0.3rem;
+  background-color: #cc9a00;
+}
+
+.header_image {
+  position: relative;
+  width: 100%;
+  height: 58rem;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-color: #444;
+  background-size: cover;
+  background-attachment: fixed;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+}
+.header_image::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: #000;
+  z-index: 0;
+  opacity: 0.8;
+}
+.header_image h1 {
+  font-size: 3.6rem;
+  position: relative;
+}
+.header_image h1::after {
+  width: 6rem;
+  height: 0.3rem;
+  background-color: #cc9a00;
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -2rem;
+  left: 50%;
+  margin-left: -3rem;
+}
+.header_image h2 {
+  font-size: 3.6rem;
+}
+
+.header_image .contact-icon {
+  width: 3.2rem;
+  height: 3.2rem;
+  font-size: 1.6rem;
 }
 
 .parallax_effect {
@@ -498,10 +653,23 @@ a:hover {
   padding: 15px 0;
   overflow: hidden;
   transition: all .3s ease;
+  color: #444;
 }
+
 .agent-card:hover {
   box-shadow: 0 0 25px 1px rgba(0,0,0,.08);
   border-color: transparent;
+  color: #777;
+}
+.agent-card:hover h3 {
+  color: #006900;
+}
+.agent-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 50%;
+
 }
 .agent-card-contacts {
   display: flex;
@@ -668,7 +836,7 @@ a:hover {
 
 @media screen and (max-width: 992px) {
   body.logged-in.admin-bar {
-    padding-top: 70px !important;
+    padding-top: 30px !important;
   }
   .mobile_header {
     display: block;
@@ -709,17 +877,6 @@ a:hover {
   }
   .post-type-archive-estate_agent .content_wrapper {
     padding-top: 0;
-  }
-  .copyright {
-    margin-left: 15px !important;
-    width: 75% !important;
-  }
-  .subfooter_menu {
-    margin: 0 15px 0 0 !important;
-  }
-  .subfooter_menu li {
-    margin-left: 0 !important;
-    margin-bottom: 0 !important;
   }
 }
 

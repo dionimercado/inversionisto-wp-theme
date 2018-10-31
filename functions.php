@@ -33,12 +33,40 @@ function inversionisto_theme_features()  {
 	// Register Sidebars
 	function inversionisto_sidebars() {
 
-		$args = array(
+		$sidebar = array(
 			'id'            => 'sidebbar',
 			'class'         => 'sidebar',
 			'name'          => __( 'Sidebar', 'inversionisto' ),
 		);
-		register_sidebar( $args );
+		register_sidebar( $sidebar );
+
+		$footer1 = array(
+			'id'            => 'footer1',
+			'class'         => 'footer1',
+			'name'          => __( 'Footer 1', 'inversionisto' ),
+		);
+		register_sidebar( $footer1 );
+
+		$footer1 = array(
+			'id'            => 'footer2',
+			'class'         => 'footer2',
+			'name'          => __( 'Footer 2', 'inversionisto' ),
+		);
+		register_sidebar( $footer1 );
+
+		$footer1 = array(
+			'id'            => 'footer3',
+			'class'         => 'footer3',
+			'name'          => __( 'Footer 3', 'inversionisto' ),
+		);
+		register_sidebar( $footer1 );
+
+		$footer1 = array(
+			'id'            => 'footer4',
+			'class'         => 'footer4',
+			'name'          => __( 'Footer 4', 'inversionisto' ),
+		);
+		register_sidebar( $footer1 );
 
 	}
 	add_action( 'widgets_init', 'inversionisto_sidebars' );
@@ -51,6 +79,10 @@ require_once get_stylesheet_directory() . '/inc/class-wp-bootstrap-navwalker.php
 
 // Register Property CPT
 require_once get_stylesheet_directory() . '/inc/property-cpt.php';
+
+
+// Register Property Action Taxonomy
+require_once get_stylesheet_directory() . '/inc/action-tax.php';
 
 // Register Property Category Taxonomy
 require_once get_stylesheet_directory() . '/inc/category-tax.php';
@@ -86,4 +118,23 @@ function inversionisto_enqueue_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'inversionisto_enqueue_scripts', 1000000000 );
 
+add_role(
+    'agent',
+    __( 'Agente' ),
+    array(
+        'read'         => true,  // true allows this capability
+        'edit_posts'   => true,
+    )
+);
+
+// Register User Contact Methods
+function agent_contacts( $user_contact_method ) {
+	// $user_contact_method['position'] = __( 'Posición', 'inversionisto' );
+	// $user_contact_method['phone'] = __( 'Teléfono', 'inversionisto' );
+	// $user_contact_method['instagram'] = __( 'Instagram', 'inversionisto' );
+
+	return $user_contact_method;
+
+}
+add_filter( 'user_contactmethods', 'agent_contacts' );
 ?>
