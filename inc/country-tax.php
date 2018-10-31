@@ -26,7 +26,7 @@ function property_country() {
 		'items_list_navigation'      => __( 'Items list navigation', 'inversionisto' ),
 	);
 	$rewrite = array(
-		'slug'                       => 'sector',
+		'slug'                       => 'pais',
 		'with_front'                 => false,
 		'hierarchical'               => false,
 	);
