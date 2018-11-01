@@ -1,7 +1,7 @@
     <footer class="footer pb-0">
       <div class="container">
         <div class="row">
-          <div class="col-md-3">
+          <div class="col-md-3 mb-5">
             <ul>
               <?php !dynamic_sidebar('footer1') ?>
             </ul>

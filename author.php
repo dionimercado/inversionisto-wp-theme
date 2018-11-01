@@ -57,7 +57,7 @@ if( $agent_info->profile_picture ) {
             ));
             while($props->have_posts()) : $props->the_post();
             ?>
-            <div class="col-md-4">
+            <div class="col-md-4 mb-5">
               <?php get_template_part('templates/property', 'listing') ?>
             </div>
           <?php endwhile; wp_reset_postdata(); ?>

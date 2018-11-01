@@ -3,7 +3,7 @@ $img_src = wp_get_attachment_image_url( get_post_meta( $post->ID, '_thumbnail_id
 $img_srcset = wp_get_attachment_image_srcset( get_post_meta($post->ID, '_thumbnail_id', true), 'full' );
 
 ?>
-<div class="blog_post border rounded bg-white mb-5">
+<div class="blog-post border rounded bg-white mb-5">
   <a href="<?php the_permalink() ?>">
     <figure>
       <picture>
