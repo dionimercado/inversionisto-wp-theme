@@ -4,8 +4,8 @@
   while(have_posts()): the_post();
   $img_src = wp_get_attachment_image_url( get_post_meta( $post->ID, '_thumbnail_id', true), 'full' );
 
-  $property_area              =   get_the_term_list($post->ID, 'prop_area', '', ', ', '');
-  $property_city              =   get_the_term_list($post->ID, 'prop_city', '', ', ', '') ;
+  $property_area              =   get_the_terms($post->ID, 'prop_area');
+  $property_city              =   get_term_by('id',$property_area[0]->parent, 'prop_area');
   $property_country           =   get_the_term_list($post->ID, 'prop_country', '', ', ', '');
   $property_category          =   get_the_term_list($post->ID, 'prop_category', '', ', ', '') ;
   $property_action            =   get_the_term_list($post->ID, 'prop_action', '', ', ', '');
@@ -27,14 +27,14 @@
                 <?php echo $property_category ?> en <?php echo $property_action ?>
               </div>
               <span class="adres_area">
-                <?php echo $property_area ?>, <?php echo $property_city ?>
+                <a href="<?php echo get_term_link($property_area[0]) ?>"><?php echo $property_area[0]->name ?></a>,
+                <a href="<?php echo get_term_link($property_city) ?>"><?php echo $property_city->name ?></a>
+                <?php //echo $property_city ?>
               </span>
             </div>
             <div class="col-md-6">
               <?php get_template_part('templates/property', 'price') ?>
             </div>
-
-
 
           </div>
           <hr>
@@ -70,11 +70,11 @@
                     <div class="row">
                       <div class="col-md-4">
                         <strong>Sector: </strong>
-                        <?php echo $property_area ?>
+                        <a href="<?php echo get_term_link($property_area[0]) ?>"><?php echo $property_area[0]->name ?></a>
                       </div>
                       <div class="col-md-4">
                         <strong>Ciudad: </strong>
-                        <?php echo $property_city ?>
+                        <a href="<?php echo get_term_link($property_city) ?>"><?php echo $property_city->name ?></a>
                       </div>
                       <div class="col-md-4">
                         <strong>País: </strong>
@@ -99,7 +99,7 @@
                         <strong>ID:</strong> <?php echo $post->ID ?>
                       </div>
                       <div class="col-md-4">
-                        <strong>Price:</strong>
+                        <strong>Precio:</strong>
                         <?php
                           if( get_post_meta($post->ID, 'property_currency', true) === "DOP") {
                             echo "RD$" . number_format(get_post_meta($post->ID, 'property_price_dop', true));

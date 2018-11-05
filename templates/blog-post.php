@@ -7,7 +7,7 @@ $img_srcset = wp_get_attachment_image_srcset( get_post_meta($post->ID, '_thumbna
   <a href="<?php the_permalink() ?>">
     <figure>
       <picture>
-        <img src="<?php echo esc_url( $img_src ); ?>&resize=600%2C300" class="img-fluid" alt="<?php the_title() ?>" />
+        <img src="<?php echo esc_url( $img_src ); ?>&resize=600%2C300" class="w-100 h-auto" alt="<?php the_title() ?>" />
       </picture>
       <figcaption class="px-5 py-4">
         <h2 class="text-dark"><?php the_title() ?></h2>

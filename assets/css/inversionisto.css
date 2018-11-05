@@ -24,6 +24,15 @@ a:hover {
   text-decoration: none;
 }
 
+.btn-primary {
+  height: 39px;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 700;
+  background-color: #bf9002;
+  border-color: #bf9002;
+}
+
 .section-title {
   text-align: center;
   max-width: 57rem;
@@ -776,6 +785,140 @@ body.home .footer {
     color:#C2CBD9;
 }
 
+.card-header .btn-link {
+  color: #333;
+  font-weight: 700;
+}
+.card-body a {
+  color: #444;
+}
+
+.advanced-search {
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  z-index: 88;
+  max-width: 100rem;
+  width: 100%;
+  margin-left: -50rem;
+}
+.advanced-search .nav-tabs {
+  border-bottom: 2px solid #bf9002;
+}
+.advanced-search .nav-tabs .nav-item{
+  margin-bottom: -2px;
+}
+
+.advanced-search .nav-tabs .nav-link {
+  background-color: #bf9002;
+  color: #fff;
+  font-weight: 700;
+  margin-right: 10px;
+}
+.advanced-search .nav-tabs .nav-link:hover {
+  border-color: #bf9002;
+}
+.advanced-search .nav-tabs .nav-link.active {
+  border-color: #fff;
+  background-color: #fff;
+  color: #444;
+}
+
+
+.advanced-search .tab-content {
+  width: 100%;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 20px rgba(0,0,0,.15);
+}
+
+.advanced-search .ui-slider {
+  margin-left: 10px;
+  margin-top: 0px;
+  height: 5px;
+}
+
+.advanced-search .ui-slider-handle {
+  cursor: pointer;
+  outline: none;
+  border-radius: 50%;
+  margin-top: -2px;
+  width: 17px;
+  height: 17px;
+  background-image: none;
+  background-color: #fff;
+}
+
+.advanced-search .ui-slider-range {
+  background-color: #016600;
+  border-style: solid;
+  border-color: #f7f8f9;
+}
+
+.advanced-search .ui-widget-content {
+  color: #768082;
+  border: 1px solid #f0f0f0;
+  background: #fff;
+  background-image: none;
+}
+.advanced-search .select2-container .select2-selection--single,
+.advanced-search .select2-container--default .select2-selection--multiple {
+  height: 39px;
+  border-color: #ddd;
+  outline: none !important;
+}
+.advanced-search .select2-container--default .select2-selection--single .select2-selection__rendered {
+  line-height: 39px;
+}
+.advanced-search .select2-container--default.select2-container--focus .select2-selection--multiple {
+  border-color: #c78f00;
+}
+
+.advanced-search .select2-container--default .select2-selection--single .select2-selection__arrow b {
+  border-width: 5px 4px 0 4px;
+  margin-left: -10px;
+  margin-top: 0;
+  top: 60%;
+}
+
+.advanced-search .select2-container--default .select2-selection--multiple .select2-selection__choice {
+  background-color: #bf9002;
+  border: 1px solid #bf9002;
+  margin-top: 4px;
+  color: #fff;
+  font-size: 14px;
+  line-height: 27px;
+}
+
+.advanced-search .select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
+  color: #fff;
+  margin-right: 0;
+  margin-left: 4px;
+  float: right;
+  font-size: 22px;
+}
+
+.select2-container--default .select2-results__option--highlighted[aria-selected] {
+  background-color: #f6f6f6 !important;
+  color: #bf9002 !important;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__rendered li,
+.select2-container--default .select2-search--inline .select2-search__field {
+  width: 100% !important;
+  padding-left: 5px;
+  line-height: 39px;
+  margin-top: 0 !important;
+}
+
+
+.ui-state-active,
+.ui-widget-content .ui-state-active,
+.ui-widget-header .ui-state-active,
+a.ui-button:active, .ui-button:active,
+.ui-button.ui-state-active:hover {
+  border-color: #016600 !important;
+  background: #cfa016 !important;
+}
 
 @media screen and (max-width: 992px) {
   body.logged-in.admin-bar {
@@ -824,6 +967,16 @@ body.home .footer {
 }
 
 @media screen and (max-width: 768px) {
+
+  .section-title {
+    margin: 5rem auto 3rem auto;
+  }
+  .section-title h2 {
+    font-size: 2.2rem;
+  }
+  .section-title p {
+    margin-bottom: 0;
+  }
 
   .agent-card {
     text-align: center;
