@@ -10,7 +10,7 @@
 
       if ( !empty($categories) ) :
         $output = '<select class="select2" name="categoria">';
-        $output.= '<option value="any">Categoría</option>';
+        $output.= '<option value="any">Tipo de inmueble</option>';
         foreach( $categories as $category ) {
           if( $category->parent == 0 ) {
             $output.= '<option value="'. esc_attr( $category->slug ) .'">'. esc_html( $category->name ) .'</option>';
@@ -36,6 +36,7 @@
         foreach( $areas as $area ) {
           if( $area->parent == 0 ) {
             $output.= '<optgroup label="'. esc_attr( $area->name ) .'">';
+            $output.= '<option value="'. esc_attr( $area->slug ) .'">Todos los sectores</option>';
             foreach( $areas as $subarea ) {
               if($subarea->parent == $area->term_id) {
               $output.= '<option value="'. esc_attr( $subarea->slug ) .'">'. esc_html( $subarea->name ) .'</option>';

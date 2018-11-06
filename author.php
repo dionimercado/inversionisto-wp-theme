@@ -51,16 +51,36 @@ if( $agent_info->profile_picture ) {
         <div class="col-12">
           <div class="row">
           <?php
-            $props = new WP_Query(array(
+            $paged = get_query_var('paged') ? get_query_var('paged') : 1;
+
+            $query = new WP_Query(array(
               'post_type' => 'property',
-              'author' => $agent_info->ID
+              'author' => $agent_info->ID,
+              'posts_per_page' => 9,
+              'paged' => $paged
             ));
-            while($props->have_posts()) : $props->the_post();
+            while($query->have_posts()) : $query->the_post();
             ?>
             <div class="col-md-4 mb-5">
               <?php get_template_part('templates/property', 'listing') ?>
             </div>
-          <?php endwhile; wp_reset_postdata(); ?>
+          <?php endwhile; ?>
+          <div class="col-12">
+            <div class="pagination">
+              <?php wp_pagenavi() ?>
+              <?php
+              // echo paginate_links( array(
+              //   'format'  => 'page/%#%',
+              //   'current' => $paged,
+              //   'total'   => $query->max_num_pages,
+              //   'mid_size'        => 5,
+              //   'prev_text'       => __('<i class="fas fa-chevron-left"></i>'),
+              //   'next_text'       => __('<i class="fas fa-chevron-right"></i>')
+              // ) );
+              ?>
+            </div>
+          </div>
+          <?php wp_reset_postdata() ?>
           </div>
         </div>
         <!-- <div class="col-md-3">

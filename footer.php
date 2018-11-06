@@ -1,17 +1,17 @@
     <footer class="footer pb-0">
       <div class="container">
         <div class="row">
-          <div class="col-md-3 mb-5">
+          <div class="col-md-3 mb-5 d-none d-md-inline-block">
             <ul>
               <?php !dynamic_sidebar('footer1') ?>
             </ul>
           </div>
-          <div class="col-md-3">
+          <div class="col-md-3 d-none d-md-inline-block">
             <ul>
               <?php !dynamic_sidebar('footer2') ?>
             </ul>
           </div>
-          <div class="col-md-3">
+          <div class="col-md-3 d-none d-md-inline-block">
             <ul>
               <?php !dynamic_sidebar('footer3') ?>
             </ul>

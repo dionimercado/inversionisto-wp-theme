@@ -1,7 +1,10 @@
 <?php get_header(); ?>
 
-<section>
+<section class="position-relative">
   <?php echo do_shortcode('[rev_slider alias="home-slider"]') ?>
+  <div class="advanced-search d-none d-md-block">
+    <?php get_template_part('templates/advanced', 'search') ?>
+  </div>
 </section>
 
 <main class="wrapper pt-5">

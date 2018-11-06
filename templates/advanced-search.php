@@ -9,9 +9,10 @@
 </ul>
 <div class="tab-content" id="myTabContent">
   <div class="tab-pane show active" id="form" role="tabpanel" aria-labelledby="venta-tab">
-    <form class="p-5" action="<?php echo get_post_type_archive_link('property') ?>" method="get">
+    <form class="p-5" action="<?php echo home_url() ?>" method="get">
       <?php get_template_part('templates/search', 'form') ?>
       <input type="hidden" name="accion" id="action" value="venta">
+      <input type="hidden" name="s" value="">
     </form>
   </div>
   <!-- <div class="tab-pane" id="alquiler" role="tabpanel" aria-labelledby="alquiler-tab">

@@ -81,6 +81,10 @@ a:hover {
   background-color: #fff;
   border-bottom: 1px solid #f0f0f0;
 }
+.headerNav .navbar-toggler {
+  font-size: 2.2rem;
+  outline: none;
+}
 .headerNav .navbar-nav .nav-link {
   font-size: 1.4rem;
   padding-left: 1.6rem;
@@ -177,7 +181,7 @@ a:hover {
 
 @media screen and (max-width: 768px) {
   .discover .boxes-row {
-    padding: 0 15px;
+    padding: 0;
     margin-bottom: 0;
   }
   .discover .box,
@@ -354,7 +358,7 @@ body.home .footer {
  .price_area {
    color: #007800;
    font-size: 30px;
-   padding: 8px 0px 0px 0px;
+   padding: 0px;
    float: right;
    font-weight: 600;
    letter-spacing: -1px;
@@ -691,27 +695,28 @@ body.home .footer {
 
 .property_listing h4 {
     padding: 0px 20px;
-    margin-top: 20px;
-    margin-bottom: 0px;
-    float: left;
+    margin: 20px 0 0 -3px;
     width: 100%;
     font-weight: 600;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.3em;
-    color: #3a4659;
+    color: #016600;
     font-family: 'Open Sans', sans-serif;
 }
 
 .listing_unit_price {
     position: relative;
     margin-top: 5px;
-    color: #297524;
-    margin-left: 20px;
-    font-size: 17px;
-    line-height: 16px;
+    color: rgba(0,0,0,.75);
+    padding: 0 20px;
+    font-size: 18px;
     float: none;
     display: block;
     line-height: 30px;
+}
+
+.listing_unit_price del {
+  font-size: 14px;
 }
 
 .property_listing_details{
@@ -798,9 +803,9 @@ body.home .footer {
   left: 50%;
   top: 30%;
   z-index: 88;
-  max-width: 100rem;
+  max-width: 96rem;
   width: 100%;
-  margin-left: -50rem;
+  margin-left: -48rem;
 }
 .advanced-search .nav-tabs {
   border-bottom: 2px solid #bf9002;
@@ -862,7 +867,7 @@ body.home .footer {
 }
 .advanced-search .select2-container .select2-selection--single,
 .advanced-search .select2-container--default .select2-selection--multiple {
-  height: 39px;
+  min-height: 39px;
   border-color: #ddd;
   outline: none !important;
 }
@@ -904,10 +909,10 @@ body.home .footer {
 
 .select2-container--default .select2-selection--multiple .select2-selection__rendered li,
 .select2-container--default .select2-search--inline .select2-search__field {
-  width: 100% !important;
+  /* width: 100% !important; */
   padding-left: 5px;
-  line-height: 39px;
-  margin-top: 0 !important;
+  /* line-height: 39px; */
+  /* margin-top: 0 !important; */
 }
 
 
@@ -918,6 +923,42 @@ a.ui-button:active, .ui-button:active,
 .ui-button.ui-state-active:hover {
   border-color: #016600 !important;
   background: #cfa016 !important;
+}
+
+.search-results .advanced-search {
+  position: relative;
+  left: 0;
+  top: 0;
+  max-width: 100%;
+  width: 100%;
+  margin-left: 0;
+}
+.search-results .advanced-search .nav-tabs .nav-item {
+  width: 50%;
+  text-align: center;
+}
+.search-results .advanced-search .nav-tabs .nav-link.active {
+  border-color: #f9f9f9;
+  background-color: #f9f9f9;
+}
+
+.search-results .footer{
+  margin-top: 0;
+}
+
+.pagination .page,
+.pagination .current {
+  background-color: #bf9002;
+  padding: 5px 12px;
+  margin: 0 3px;
+  color: #fff;
+  border: 0;
+}
+
+.pagination .current,
+.pagination .page:hover {
+  background-color: #016600;
+  color: #fff;
 }
 
 @media screen and (max-width: 992px) {
@@ -976,6 +1017,28 @@ a.ui-button:active, .ui-button:active,
   }
   .section-title p {
     margin-bottom: 0;
+  }
+
+  .post-title {
+    font-size: 2.2rem;
+  }
+
+  .footer .widgettitle {
+    display: none;
+  }
+
+  .price_area {
+    font-size: 24px;
+  }
+
+  .jetpack_widget_social_icons li,
+  .jetpack_widget_social_icons ul {
+    text-align: center;
+    margin-bottom: 0 !important;
+  }
+
+  .jetpack_widget_social_icons a {
+    margin-right: 0.5rem;
   }
 
   .agent-card {

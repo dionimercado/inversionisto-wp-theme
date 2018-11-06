@@ -22,7 +22,7 @@
           <h2 class="post-title mt-5"><?php the_title() ?></h2>
           <hr>
           <div class="row py-3">
-            <div class="property-meta col-md-6">
+            <div class="property-meta col-6">
               <div class="property_categs">
                 <?php echo $property_category ?> en <?php echo $property_action ?>
               </div>
@@ -32,7 +32,7 @@
                 <?php //echo $property_city ?>
               </span>
             </div>
-            <div class="col-md-6">
+            <div class="col-6">
               <?php get_template_part('templates/property', 'price') ?>
             </div>
 

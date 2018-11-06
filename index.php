@@ -6,7 +6,7 @@ get_header();
 
 <section class="position-relative">
   <?php echo do_shortcode('[rev_slider alias="home-slider"]') ?>
-  <div class="advanced-search d-none d-md-block">
+  <div class="advanced-search d-none d-lg-block">
     <?php get_template_part('templates/advanced', 'search') ?>
   </div>
 </section>
@@ -113,9 +113,6 @@ get_header();
 
         while($posts->have_posts()) : $posts->the_post();
         ?>
-        <div class="col-md-6">
-          <?php get_template_part('templates/blog', 'post') ?>
-        </div>
         <div class="col-md-6">
           <?php get_template_part('templates/blog', 'post') ?>
         </div>

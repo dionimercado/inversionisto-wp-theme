@@ -9,6 +9,13 @@ if ( ! isset( $content_width ) )
 // Register Theme Features
 function inversionisto_theme_features()  {
 
+	add_theme_support( 'infinite-scroll', array(
+	        'container' => 'content',
+	        'render'    => 'twenty_ten_infinite_scroll_render',
+	        'footer'    => 'wrapper',
+	    ) );
+
+
 	// Add theme support for Automatic Feed Links
 	add_theme_support( 'automatic-feed-links' );
 
@@ -146,4 +153,26 @@ function agent_contacts( $user_contact_method ) {
 
 }
 add_filter( 'user_contactmethods', 'agent_contacts' );
+
+
+function author_cpt_filter($query) {
+    if ( !is_admin() && $query->is_main_query() ) {
+      if ($query->is_author()) {
+        $query->set('post_type', array('property'));
+        $query->set('post_per_page', 3);
+
+      }
+    }
+}
+add_action('pre_get_posts','author_cpt_filter');
+
+
+
+function twenty_ten_infinite_scroll_render() {
+	while( have_posts() ) : the_post(); ?>
+	<div class="col-md-4 mb-5">
+		<?php get_template_part('templates/property', 'listing') ?>
+	</div>
+	<?php endwhile;
+}
 ?>
