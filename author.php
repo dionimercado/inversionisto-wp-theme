@@ -67,16 +67,16 @@ if( $agent_info->profile_picture ) {
           <?php endwhile; ?>
           <div class="col-12">
             <div class="pagination">
-              <?php wp_pagenavi() ?>
+              <?php //wp_pagenavi() ?>
               <?php
-              // echo paginate_links( array(
-              //   'format'  => 'page/%#%',
-              //   'current' => $paged,
-              //   'total'   => $query->max_num_pages,
-              //   'mid_size'        => 5,
-              //   'prev_text'       => __('<i class="fas fa-chevron-left"></i>'),
-              //   'next_text'       => __('<i class="fas fa-chevron-right"></i>')
-              // ) );
+              echo paginate_links( array(
+                'format'  => 'page/%#%',
+                'current' => $paged,
+                'total'   => $query->max_num_pages,
+                'mid_size'        => 5,
+                'prev_text'       => __('<i class="fas fa-chevron-left"></i>'),
+                'next_text'       => __('<i class="fas fa-chevron-right"></i>')
+              ) );
               ?>
             </div>
           </div>

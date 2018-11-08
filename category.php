@@ -9,10 +9,7 @@
     <div class="container">
       <div class="row">
         <?php while(have_posts()) : the_post(); ?>
-          <div class="col-md-6">
-            <?php get_template_part('templates/blog', 'post') ?>
-          </div>
-          <div class="col-md-6">
+          <div class="col-md-4 mb-5">
             <?php get_template_part('templates/blog', 'post') ?>
           </div>
         <?php endwhile; ?>

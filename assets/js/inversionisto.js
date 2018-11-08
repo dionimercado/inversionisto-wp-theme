@@ -8,7 +8,15 @@ jQuery(function($) {
   var rent_max_price_dop = 500000;
   var sale_max_price_dop = 50000000;
 
-  updateSearchInputs(currency, action)
+  updateSearchInputs(currency, action);
+
+  // Offcanvas Search
+  jQuery('.offcanvas-search-toggler').on('click', function () {
+    jQuery('.offcanvas-search').toggleClass('open');
+    jQuery(this).toggleClass('open');
+    jQuery('body').toggleClass('search-open');
+  });
+
 
 
   jQuery('.advanced-search a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
@@ -96,6 +104,35 @@ jQuery(function($) {
       992: {
         stagePadding: 200,
       }
+    }
+  });
+
+  jQuery('.owl-properties').owlCarousel({
+    loop: false,
+    center:false,
+    startPosition: 0,
+    margin:20,
+    dots: true,
+    autoplay: true,
+    autoplayTimeout: 7000,
+    responsive:{
+        0:{
+            items:1,
+            slideBy: 1,
+            margin: 10,
+            stagePadding: 50,
+            startPosition: 1,
+        },
+        600:{
+            items:2,
+            slideBy: 2,
+            startPosition: 2,
+            stagePadding: 80,
+        },
+        1000:{
+            items:3,
+            slideBy: 3
+        }
     }
   });
 

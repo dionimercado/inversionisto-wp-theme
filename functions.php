@@ -107,13 +107,12 @@ require_once get_stylesheet_directory() . '/inc/country-tax.php';
  * Enqueue script for child theme
  */
 function inversionisto_enqueue_scripts() {
-  wp_enqueue_style( 'inversionisto', get_template_directory_uri() . '/assets/css/inversionisto.css', array('bootstrap'), uniqid() );
   wp_enqueue_style( 'bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css' );
   wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=Poppins:400,600,700' );
   wp_enqueue_style( 'fontawesome', 'https://use.fontawesome.com/releases/v5.4.1/css/all.css', array(), '5.4.1' );
   wp_enqueue_style( 'jquery-ui', '//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css', array(), '1.12.1' );
   wp_enqueue_style( 'select2', '//cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/css/select2.min.css', array(), '4.0.5' );
-	// wp_enqueue_style( 'inversionisto', get_stylesheet_directory_uri() . '/assets/css/inversionisto.css', null, uniqid() );
+	wp_enqueue_style( 'inversionisto', get_template_directory_uri() . '/assets/css/inversionisto.css', array('bootstrap'), uniqid() );
 
   wp_enqueue_style( 'fancybox', 'https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.css', array(), '3.3.7', 'all');
   wp_enqueue_style( 'owl-carousel', get_template_directory_uri() . '/assets/css/owl.carousel.min.css', array(), '2.2.1', 'all');
@@ -143,16 +142,7 @@ add_role(
     )
 );
 
-// Register User Contact Methods
-function agent_contacts( $user_contact_method ) {
-	// $user_contact_method['position'] = __( 'Posición', 'inversionisto' );
-	// $user_contact_method['phone'] = __( 'Teléfono', 'inversionisto' );
-	// $user_contact_method['instagram'] = __( 'Instagram', 'inversionisto' );
 
-	return $user_contact_method;
-
-}
-add_filter( 'user_contactmethods', 'agent_contacts' );
 
 
 function author_cpt_filter($query) {
@@ -165,6 +155,34 @@ function author_cpt_filter($query) {
     }
 }
 add_action('pre_get_posts','author_cpt_filter');
+
+/**
+ * Disable responsive image support (test!)
+ */
+
+// Clean the up the image from wp_get_attachment_image()
+add_filter( 'wp_get_attachment_image_attributes', function( $attr )
+{
+    if( isset( $attr['sizes'] ) )
+        unset( $attr['sizes'] );
+
+    if( isset( $attr['srcset'] ) )
+        unset( $attr['srcset'] );
+
+    return $attr;
+
+ }, PHP_INT_MAX );
+
+// Override the calculated image sizes
+add_filter( 'wp_calculate_image_sizes', '__return_empty_array',  PHP_INT_MAX );
+
+// Override the calculated image sources
+add_filter( 'wp_calculate_image_srcset', '__return_empty_array', PHP_INT_MAX );
+
+// Remove the reponsive stuff from the content
+remove_filter( 'the_content', 'wp_make_content_images_responsive' );
+
+add_filter( 'wp_calculate_image_srcset_meta', '__return_empty_array' );
 
 
 

@@ -18,7 +18,7 @@ get_header();
         <h2><?php _e('Propiedades Destacadas') ?></h2>
         <p>These are the latest properties in the Sales category. You can create the list using the “latest listing shortcode” and show items by specific categories.</p>
       </div>
-      <div class="row">
+      <div class="owl-properties owl-carousel owl-theme">
         <?php
         $featured = new WP_Query(array(
           'post_type' => 'property',
@@ -33,7 +33,7 @@ get_header();
 
         while($featured->have_posts()) : $featured->the_post();
         ?>
-        <div class="col-md-4 mb-5">
+        <div class="">
           <?php get_template_part('templates/property', 'listing') ?>
         </div>
         <?php endwhile; wp_reset_postdata() ?>
@@ -94,6 +94,9 @@ get_header();
         </div>
         <?php endwhile; wp_reset_postdata() ?>
       </div>
+    </div>
+    <div class="text-center">
+      <a href="/propiedades/" class="btn btn-primary px-4 py-3 mb-5" style="height: auto;">Ver todas las propiedades</a>
     </div>
   </section>
 

@@ -9,17 +9,28 @@
 
 <main class="wrapper pt-5">
   <section class="recent-properties pt-5">
-    <!-- <div class="section-title">
-      <h2><?php _e('Propiedades Recientes') ?></h2>
-      <p>These are the latest properties in the Sales category. You can create the list using the “latest listing shortcode” and show items by specific categories.</p>
-    </div> -->
     <div class="container">
+      <div class="text-left">
+        <h2 class="page-header"><?php echo get_the_archive_title() ?></h2>
+      </div>
       <div class="row">
         <?php while(have_posts()) : the_post(); ?>
         <div class="col-md-4 mb-5">
           <?php get_template_part('templates/property', 'listing') ?>
         </div>
         <?php endwhile; ?>
+      </div>
+      <div class="pagination">
+        <?php
+        echo paginate_links( array(
+          'format'  => 'page/%#%',
+          // 'current' => $paged,
+          // 'total'   => $query->max_num_pages,
+          'mid_size'        => 5,
+          'prev_text'       => __('<i class="fas fa-chevron-left"></i>'),
+          'next_text'       => __('<i class="fas fa-chevron-right"></i>')
+        ) );
+        ?>
       </div>
     </div>
   </section>

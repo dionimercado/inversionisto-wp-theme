@@ -87,7 +87,7 @@
                 $meta_query[] = array(
                   'key' => 'property_bedrooms',
                   'value' => $_GET['habitaciones'],
-                  'compare' => '=',
+                  'compare' => '>=',
                 );
               }
 
@@ -95,7 +95,7 @@
                 $meta_query[] = array(
                   'key' => 'property_garage_size',
                   'value' => $_GET['parqueos'],
-                  'compare' => '=',
+                  'compare' => '>=',
                 );
               }
 
@@ -103,7 +103,7 @@
                 $meta_query[] = array(
                   'key' => 'property_bathrooms',
                   'value' => $_GET['banos'],
-                  'compare' => '=',
+                  'compare' => '>=',
                 );
               }
 
@@ -169,7 +169,6 @@
               </div>
             <?php while( $query->have_posts() ) : $query->the_post(); ?>
             <div class="col-md-6 col-lg-4 mb-5">
-
               <?php get_template_part('templates/property', 'listing') ?>
             </div>
           <?php endwhile; ?>
@@ -188,11 +187,9 @@
             </div>
           </div>
           <?php wp_reset_postdata() ?>
-
           </div>
         </div>
       </div>
-
     </div>
   </section>
 </main>

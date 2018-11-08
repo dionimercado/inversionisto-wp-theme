@@ -17,7 +17,7 @@ foreach ($opportunity as $key => $value) {
   <a href="<?php the_permalink() ?>">
     <figure>
       <picture>
-        <img src="<?php echo esc_url( $img_src ); ?>&resize=400%2C300" class="w-100 h-auto" alt="<?php the_title() ?>" />
+        <img src="<?php echo esc_url( $img_src ); ?>&resize=400,300&w=400&h=300" class="w-100 h-auto" alt="<?php the_title() ?>" />
       </picture>
       <figcaption>
         <h4><svg style="margin-top: -3px;" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="#016600" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/><path d="M0 0h24v24H0z" fill="none"/></svg><?php echo $property_area[0]->name ?></h4>
