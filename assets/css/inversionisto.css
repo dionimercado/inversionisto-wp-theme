@@ -17,12 +17,22 @@ body {
 #wpadminbar {
   display: none !important;
 }
+
+:focus {
+  outline: none;
+  box-shadow: none;
+}
+
 a {
   transition: all 0.3s ease;
+  color: #016600;
 }
 a:hover {
   text-decoration: none;
+  color: #bf9002;
 }
+
+
 
 .btn-primary {
   height: 39px;
@@ -31,6 +41,11 @@ a:hover {
   font-weight: 700;
   background-color: #bf9002;
   border-color: #bf9002;
+}
+
+.btn-primary:hover {
+  background-color: #016600 !important;
+  border-color: #016600 !important;
 }
 
 .section-title {
@@ -60,14 +75,52 @@ a:hover {
   line-height: 20px;
 }
 
-.top_bar_wrapper {
-  background-color: #c78f00 !important;
+.topbar {
+  background-color: #bf9002;
+  color: #fff;
+  height: 4rem;
+  line-height: 4rem;
+  font-size: 1.4rem;
 }
 
-.top_bar, .top_bar a {
-  color: #ffffff !important;
+.topbar a {
+  color: #fff;
+
+}
+.topbar i {
+  font-size: 1.2rem;
+}
+.topbar .social-icons {
+  margin-right: 1rem;
+}
+.topbar .social-icons a {
+  margin-left: .5rem;
+}
+.topbar .social-icons i {
+  font-size: 1.4rem;
 }
 
+.topbar .goog-te-gadget-simple {
+  border: 0 !important;
+  background-color: transparent !important;
+  padding: 0;
+  margin-right: -22px;
+}
+.topbar .goog-te-gadget-simple img {
+  display: none !important;
+}
+.topbar .goog-te-gadget-simple .goog-te-menu-value {
+  color: #bf9002;
+  background-color: #fff;
+  text-transform: uppercase;
+  padding: 3px 5px;
+  border-radius: 2px;
+  font-weight: 600;
+}
+.goog-te-gadget-simple .goog-te-menu-value>span:nth-of-type(2),
+.goog-te-gadget-simple .goog-te-menu-value>span:nth-of-type(3) {
+  display: none;
+}
 
 .bg-light {
   overflow: hidden;
@@ -80,6 +133,7 @@ a:hover {
 .headerNav {
   background-color: #fff;
   border-bottom: 1px solid #f0f0f0;
+  top: 40px;
 }
 .headerNav .navbar-toggler {
   font-size: 2.2rem;
@@ -91,6 +145,7 @@ a:hover {
   padding-right: 1.6rem;
   color: #3a4659;
   cursor: pointer;
+  font-weight: 600;
 }
 
 @media screen and (min-width: 992px) {
@@ -411,6 +466,9 @@ body.home .footer {
   z-index: 0;
   opacity: 0.8;
 }
+.single-post .header_image::before {
+  display: none;
+}
 .header_image h1 {
   font-size: 3.6rem;
   position: relative;
@@ -457,11 +515,15 @@ body.home .footer {
   border: 1px solid #eee;
   border-radius: 4px;
   margin-top: 3rem;
+  overflow: hidden;
 }
 
 .sidebar ul li.widget .widgettitle {
-  background-color: #f2f2f2;
+  background-color: #bf9002;
   padding: 0.5rem 1rem;
+  font-size: 1.8rem;
+  color: #fff;
+  font-weight: 700;
 }
 
 .testimonials {
@@ -563,15 +625,6 @@ body.home .footer {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
   font-weight: 600;
-}
-
-@media screen and (max-width: 768px) {
-  .newsletter-form {
-    padding: 1rem 2rem 8rem;
-  }
-  .newsletter h2 {
-    font-size: 22px;
-  }
 }
 
 
@@ -1072,7 +1125,8 @@ a.ui-button:active, .ui-button:active,
   background: #cfa016 !important;
 }
 
-.search-results .advanced-search {
+.search-results .advanced-search,
+.tax-prop_category .advanced-search {
   position: relative;
   left: 0;
   top: 0;
@@ -1080,16 +1134,19 @@ a.ui-button:active, .ui-button:active,
   width: 100%;
   margin-left: 0;
 }
-.search-results .advanced-search .nav-tabs .nav-item {
+.search-results .advanced-search .nav-tabs .nav-item,
+.tax-prop_category .advanced-search .nav-tabs .nav-item {
   width: 50%;
   text-align: center;
 }
-.search-results .advanced-search .nav-tabs .nav-link.active {
+.search-results .advanced-search .nav-tabs .nav-link.active,
+.tax-prop_category .advanced-search .nav-tabs .nav-link.active {
   border-color: #f9f9f9;
   background-color: #f9f9f9;
 }
 
-.search-results .footer{
+.search-results .footer,
+.tax-prop_category .footer{
   margin-top: 0;
 }
 
@@ -1124,7 +1181,7 @@ a.ui-button:active, .ui-button:active,
   bottom: 0;
   width: 100%;
   max-width: 400px;
-  padding: 75px 0;
+  padding: 115px 0 30px;
   margin-left: 0;
   visibility: hidden;
   overflow-y: auto;
@@ -1156,6 +1213,13 @@ a.ui-button:active, .ui-button:active,
   margin-left: -4rem;
 }
 
+.widget_lidd_mc_widget form {
+  padding: 1.8rem;
+}
+
+.widget_lidd_mc_widget label {
+  font-size: 1.4rem;
+}
 
 @media screen and (max-width: 992px) {
   body.logged-in.admin-bar {
@@ -1225,6 +1289,10 @@ a.ui-button:active, .ui-button:active,
     margin-bottom: 0;
   }
 
+  .page-header {
+    font-size: 2.4rem;
+  }
+
   .post-title {
     font-size: 2.2rem;
   }
@@ -1292,4 +1360,17 @@ a.ui-button:active, .ui-button:active,
   .contact-map {
     height: 150px;
   }
+
+  .newsletter-form {
+    padding: 1rem 2rem 5rem;
+  }
+
+  .section-title h4 {
+    font-size: 1.4rem;
+  }
+
+  .newsletter .section-title h2 {
+    font-size: 2rem;
+  }
+
 }

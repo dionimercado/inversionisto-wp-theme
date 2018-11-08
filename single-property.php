@@ -4,11 +4,22 @@
   while(have_posts()): the_post();
   $img_src = wp_get_attachment_image_url( get_post_meta( $post->ID, '_thumbnail_id', true), 'full' );
 
+  // $property_category          =   get_the_term_list($post->ID, 'prop_category', '', ', ', '') ;
+  $property_category              =   get_the_terms($post->ID, 'prop_category');
   $property_area              =   get_the_terms($post->ID, 'prop_area');
   $property_city              =   get_term_by('id',$property_area[0]->parent, 'prop_area');
   $property_country           =   get_the_term_list($post->ID, 'prop_country', '', ', ', '');
-  $property_category          =   get_the_term_list($post->ID, 'prop_category', '', ', ', '') ;
   $property_action            =   get_the_term_list($post->ID, 'prop_action', '', ', ', '');
+
+
+  $agent_info = get_user_by( 'id', $post->post_author );
+
+  if( $agent_info->profile_picture ) {
+    $profile = wp_get_attachment_image_url( $agent_info->profile_picture, 'medium' );
+  }else{
+    $profile = wp_get_attachment_image_url( 124, 'medium' );
+  }
+
 ?>
 
 <main class="wrapper">
@@ -24,7 +35,7 @@
           <div class="row py-3">
             <div class="property-meta col-6">
               <div class="property_categs">
-                <?php echo $property_category ?> en <?php echo $property_action ?>
+                <a href="<?php echo get_term_link($property_category[0]) ?>"><?php echo $property_category[0]->name ?></a> en <?php echo $property_action ?>
               </div>
               <span class="adres_area">
                 <a href="<?php echo get_term_link($property_area[0]) ?>"><?php echo $property_area[0]->name ?></a>,
@@ -159,6 +170,56 @@
                 </div>
               </div>
             </div>
+          </div>
+
+          <div class="property-agent">
+            <div class="rounded text-center text-md-left" style="background-color: #c78f00;">
+              <div class="row">
+                <div class="col-lg-3 col-md-4 my-auto">
+                  <img style="max-width: 120px; border: 2px solid #fff;" class="img-fluid rounded-circle my-5 my-md-4 mx-md-5" src="<?php echo $profile ?>" alt="<?php echo $agent_info->first_name ?> <?php echo $agent_info->last_name ?>" />
+                </div>
+                <div class="col-lg-9 col-md-8">
+                  <div class="p-4 text-white">
+                    <h2><?php echo $agent_info->first_name ?> <?php echo $agent_info->last_name ?></h2>
+                    <p class="text-black-50 mb-0"><?php echo $agent_info->position ?></p>
+                    <p class="text-black-50 mb-0"><?php echo $agent_info->email ?></p>
+                    <p class="text-black-50">@<?php echo $agent_info->instagram ?></p>
+                    <p class="text-dark bg-white py-2 px-3 rounded d-inline-block" style="font-size: 22px; font-weight: 700;"><i class="fas fa-phone mr-3" style="transform: rotate(100deg); font-size: 16px;"></i><?php echo $agent_info->phone ?></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-5">
+            <h2 class="page-header">Inmuebles similares</h2>
+          </div>
+          <div class="owl-properties owl-carousel owl-theme">
+            <?php
+            $similar = new WP_Query(array(
+              'post_type' => 'property',
+              'showposts' => 6,
+              'tax_query' => array(
+                  'relation' => 'OR',
+                  array(
+                      'taxonomy' => 'prop_category',
+                      'field'    => 'slug',
+                      'terms'    => array($property_category[0]->slug),
+                  ),
+                  array(
+                      'taxonomy' => 'prop_area',
+                      'field'    => 'slug',
+                      'terms'    => array($property_city->slug),
+                  )
+              ),
+            ));
+
+            while($similar->have_posts()) : $similar->the_post();
+            ?>
+            <div class="">
+              <?php get_template_part('templates/property', 'listing') ?>
+            </div>
+            <?php endwhile; wp_reset_postdata() ?>
           </div>
         </article>
       </div>

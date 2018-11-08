@@ -4,7 +4,7 @@
 get_header();
 ?>
 
-<section class="position-relative">
+<section class="position-relative" style="margin-top: 85px;">
   <?php echo do_shortcode('[rev_slider alias="home-slider"]') ?>
   <div class="advanced-search d-none d-lg-block">
     <?php get_template_part('templates/advanced', 'search') ?>
@@ -102,7 +102,7 @@ get_header();
 
   <div style="clear: both;"></div>
   <section class="testimonials">
-    <div class="section-title">
+    <div class="section-title pt-5">
       <h4><?php _e('Publicaciones Recientes') ?></h4>
       <h2><?php _e('Artículos de Interés') ?></h2>
     </div>
@@ -116,7 +116,7 @@ get_header();
 
         while($posts->have_posts()) : $posts->the_post();
         ?>
-        <div class="col-md-6">
+        <div class="col-md-6 mb-5">
           <?php get_template_part('templates/blog', 'post') ?>
         </div>
         <?php endwhile; wp_reset_postdata() ?>

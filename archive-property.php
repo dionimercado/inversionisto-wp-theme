@@ -1,14 +1,14 @@
 <?php get_header(); ?>
 
-<section class="position-relative">
+<section class="position-relative" style="margin-top: 85px;">
   <?php echo do_shortcode('[rev_slider alias="home-slider"]') ?>
   <div class="advanced-search d-none d-md-block">
     <?php get_template_part('templates/advanced', 'search') ?>
   </div>
 </section>
 
-<main class="wrapper pt-5">
-  <section class="recent-properties pt-5">
+<main class="wrapper pt-md-5">
+  <section class="recent-properties pt-md-5">
     <div class="container">
       <div class="text-left">
         <h2 class="page-header"><?php _e('Listado de inmuebles') ?></h2>

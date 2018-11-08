@@ -1,11 +1,11 @@
 <?php get_header(); ?>
 
-<main class="wrapper pt-5">
+<main class="wrapper pt-md-5" style="margin-top: 85px">
   <section class="recent-properties">
     <div class="container-fluid">
       <div class="row">
-        <div class="col-md-4 col-lg-3 bg-white border-right pb-5">
-          <div class="advanced-search pt-5 mt-5">
+        <div class="col-md-4 col-lg-3 bg-white border-right pb-5 d-none d-md-block">
+          <div class="advanced-search mt-5">
             <ul class="nav nav-tabs" id="myTab" role="tablist">
               <li class="nav-item">
                 <a class="nav-link active" id="form-tab" data-toggle="tab" data-type="venta" href="#form" role="tab" aria-controls="venta" aria-selected="true">Venta</a>

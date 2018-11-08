@@ -16,7 +16,7 @@ if( $agent_info->profile_picture ) {
 }
 
 ?>
-<main class="wrapper">
+<main class="wrapper" style="margin-top: 85px;">
   <header class="header_image d-flex align-items-center justify-content-center" style="background-image: url(<?php echo $banner ?>);">
     <div class="position-relative">
       <img class="img-fluid rounded-circle" style="max-width: 150px; border: 3px solid #fff;" src="<?php echo $profile ?>" alt="">
@@ -40,7 +40,7 @@ if( $agent_info->profile_picture ) {
       </div>
     </div>
   </header>
-  <div class="agent-profile mt-5">
+  <div class="agent-profile mt-md-5">
     <div class="container">
       <div class="row">
         <div class="col-12">

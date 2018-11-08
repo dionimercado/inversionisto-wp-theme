@@ -4,7 +4,7 @@ get_header();
 
 $banner = wp_get_attachment_image_url( 126, 'full' );
 ?>
-<main class="wrapper">
+<main class="wrapper" style="margin-top: 85px;">
   <header class="header_image" style="background-image: url(<?php echo $banner ?>); max-height: 300px;">
     <div class="position-relative">
       <h1><?php the_title() ?></h1>
