@@ -11,9 +11,9 @@ function property_cpt() {
 		'archives'              => __( 'Item Archives', 'inversionisto' ),
 		'attributes'            => __( 'Item Attributes', 'inversionisto' ),
 		'parent_item_colon'     => __( 'Parent Item:', 'inversionisto' ),
-		'all_items'             => __( 'All Items', 'inversionisto' ),
+		'all_items'             => __( 'Todas', 'inversionisto' ),
 		'add_new_item'          => __( 'Add New Item', 'inversionisto' ),
-		'add_new'               => __( 'Add New', 'inversionisto' ),
+		'add_new'               => __( 'Nueva Propiedad', 'inversionisto' ),
 		'new_item'              => __( 'New Item', 'inversionisto' ),
 		'edit_item'             => __( 'Edit Item', 'inversionisto' ),
 		'update_item'           => __( 'Update Item', 'inversionisto' ),
@@ -56,7 +56,7 @@ function property_cpt() {
 		'exclude_from_search'   => false,
 		'publicly_queryable'    => true,
 		'rewrite'               => $rewrite,
-		'capability_type'       => 'page',
+		'capability_type'       => 'post',
 		'show_in_rest'          => true,
 	);
 	register_post_type( 'property', $args );

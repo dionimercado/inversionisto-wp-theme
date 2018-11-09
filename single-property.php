@@ -22,7 +22,7 @@
 
 ?>
 
-<main class="wrapper">
+<main class="wrapper" style="margin-top: 85px;">
   <header class="">
     <?php get_template_part('templates/property', 'carousel') ?>
   </header>
@@ -173,19 +173,24 @@
           </div>
 
           <div class="property-agent">
-            <div class="rounded text-center text-md-left" style="background-color: #c78f00;">
+            <div class="rounded text-center text-lg-left" style="background-color: #c78f00;">
               <div class="row">
-                <div class="col-lg-3 col-md-4 my-auto">
+                <div class="col-lg-3 col-md-12 my-auto">
                   <img style="max-width: 120px; border: 2px solid #fff;" class="img-fluid rounded-circle my-5 my-md-4 mx-md-5" src="<?php echo $profile ?>" alt="<?php echo $agent_info->first_name ?> <?php echo $agent_info->last_name ?>" />
                 </div>
-                <div class="col-lg-9 col-md-8">
-                  <div class="p-4 text-white">
-                    <h2><?php echo $agent_info->first_name ?> <?php echo $agent_info->last_name ?></h2>
-                    <p class="text-black-50 mb-0"><?php echo $agent_info->position ?></p>
-                    <p class="text-black-50 mb-0"><?php echo $agent_info->email ?></p>
-                    <p class="text-black-50">@<?php echo $agent_info->instagram ?></p>
-                    <p class="text-dark bg-white py-2 px-3 rounded d-inline-block" style="font-size: 22px; font-weight: 700;"><i class="fas fa-phone mr-3" style="transform: rotate(100deg); font-size: 16px;"></i><?php echo $agent_info->phone ?></p>
-                  </div>
+                <div class="col-lg-4 col-md-6 my-auto text-center text-md-right text-lg-left">
+                  <h2 class="text-white"><?php echo $agent_info->first_name ?> <?php echo $agent_info->last_name ?></h2>
+                  <p class="text-black-50 mb-0"><?php echo $agent_info->position ?></p>
+                  <p class="text-white-50">@<?php echo $agent_info->instagram ?></p>
+                </div>
+                <div class="col-lg-5 col-md-6 my-auto text-center text-md-left text-lg-left">
+                  <!-- <h2 class="text-white">Contactar Agente</h2> -->
+                  <p class="text-white mb-0"><i class="fas fa-envelope"></i><?php echo $agent_info->user_email ?></p>
+                  <p class="text-white"><i class="fas fa-phone" style="transform: rotate(100deg);"></i><?php echo $agent_info->phone ?></p>
+                  <!-- <p class="text-dark bg-white py-2 px-3 rounded d-inline-block" style="font-size: 16px; font-weight: 700;"><i class="fas fa-phone mr-3" style="transform: rotate(100deg); font-size: 16px;"></i><?php echo $agent_info->phone ?></p> -->
+                  <a data-fancybox data-src="#hidden-content" href="javascript:;" class="btn btn-primary h-auto mb-5" style="background-color: #006900; border-color: #006900;">
+                  	Enviar mensaje
+                  </a>
                 </div>
               </div>
             </div>
@@ -199,8 +204,9 @@
             $similar = new WP_Query(array(
               'post_type' => 'property',
               'showposts' => 6,
+              'post__not_in' => get_the_ID(),
               'tax_query' => array(
-                  'relation' => 'OR',
+                  'relation' => 'AND',
                   array(
                       'taxonomy' => 'prop_category',
                       'field'    => 'slug',

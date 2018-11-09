@@ -1,0 +1,22 @@
+#menu-tools,
+#menu-comments,
+#toplevel_page_jetpack,
+#menu-posts-tcb_lightbox,
+.user-rich-editing-wrap,
+.user-syntax-highlighting-wrap,
+.user-comment-shortcuts-wrap,
+.user-display-name-wrap,
+.user-nickname-wrap,
+.user-url-wrap,
+.user-googleplus-wrap,
+.user-twitter-wrap,
+.user-facebook-wrap,
+.user-facebook-wrap,
+.user-description-wrap,
+.user-profile-picture,
+.show-admin-bar.user-admin-bar-front-wrap,
+.MetaboxWarning__WarningBox-gHrSIw,
+.yoast-settings,
+#post-by-email {
+    display: none !important;
+}

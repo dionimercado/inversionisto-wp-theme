@@ -7,7 +7,7 @@ function property_categories() {
 		'name'                       => _x( 'Categorías', 'Taxonomy General Name', 'inversionisto' ),
 		'singular_name'              => _x( 'Categoría', 'Taxonomy Singular Name', 'inversionisto' ),
 		'menu_name'                  => __( 'Categorías', 'inversionisto' ),
-		'all_items'                  => __( 'All Items', 'inversionisto' ),
+		'all_items'                  => __( 'Todas', 'inversionisto' ),
 		'parent_item'                => __( 'Parent Item', 'inversionisto' ),
 		'parent_item_colon'          => __( 'Parent Item:', 'inversionisto' ),
 		'new_item_name'              => __( 'New Item Name', 'inversionisto' ),

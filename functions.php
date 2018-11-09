@@ -121,6 +121,7 @@ function inversionisto_enqueue_scripts() {
   wp_enqueue_script( 'popper', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js', array ( 'jquery' ), '1.14.3', true);
   wp_enqueue_script( 'bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js', array ( 'jquery' ), '4.1.3', true);
 	wp_enqueue_script('jquery-ui', '//code.jquery.com/ui/1.12.1/jquery-ui.js', array('jquery'), '1.12.1');
+	wp_enqueue_script('jqueryui-touch-punch', 'https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js', array('jquery-ui'), '0.2.3');
 	wp_enqueue_script('select2', '//cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.min.js', array('jquery'), '4.0.5');
 	wp_enqueue_script('jquery-number', '//cdnjs.cloudflare.com/ajax/libs/df-number-format/2.1.6/jquery.number.min.js', array('jquery'), '2.1.6');
 
@@ -133,6 +134,13 @@ function inversionisto_enqueue_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'inversionisto_enqueue_scripts', 1000000000 );
 
+
+// custom css and js
+add_action('admin_enqueue_scripts', 'cstm_css_and_js');
+function cstm_css_and_js($hook) {
+		wp_enqueue_style( 'inversionisto-admin', get_template_directory_uri() . '/assets/css/inversionisto-admin.css', array(), uniqid() );
+}
+
 add_role(
     'agent',
     __( 'Agente' ),
@@ -143,7 +151,15 @@ add_role(
 );
 
 
-
+// Register User Contact Methods
+function agent_contacts( $user_contact_method ) {
+	$user_contact_method['position'] = __( 'Posición', 'inversionisto' );
+	$user_contact_method['phone'] = __( 'Teléfono', 'inversionisto' );
+	$user_contact_method['instagram'] = __( 'Instagram', 'inversionisto' );
+	// unset($user_contact_method[])
+	return $user_contact_method;
+}
+add_filter( 'user_contactmethods', 'agent_contacts' );
 
 function author_cpt_filter($query) {
     if ( !is_admin() && $query->is_main_query() ) {

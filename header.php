@@ -10,11 +10,30 @@
     <?php if(wp_is_mobile()) : ?>
     <div class="offcanvas-search advanced-search" id="form" role="tabpanel" aria-labelledby="venta-tab">
       <h2 class="page-header text-center"><?php _e('Buscar Propiedad') ?></h2>
-      <form class="p-4" action="<?php echo home_url() ?>" method="get">
-        <?php get_template_part('templates/search', 'vertical') ?>
+
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link active" id="form-tab" data-toggle="tab" data-type="venta" href="#form" role="tab" aria-controls="venta" aria-selected="true">Venta</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="form-tab" data-toggle="tab" href="#form" data-type="alquiler" role="tab" aria-controls="alquiler" aria-selected="false">Alquiler</a>
+        </li>
+      </ul>
+      <div class="tab-content bg-light pb-5" id="myTabContent" style="box-shadow: none;">
+        <div class="tab-pane show active" id="form" role="tabpanel" aria-labelledby="venta-tab">
+          <form class="p-3" action="<?php echo home_url() ?>" method="get">
+            <?php get_template_part('templates/search', 'vertical') ?>
+            <input type="hidden" name="accion" id="action" value="venta">
+            <input type="hidden" name="s" value="">
+          </form>
+        </div>
+      </div>
+
+      <!-- <form class="p-4" action="<?php echo home_url() ?>" method="get">
+        <?php //get_template_part('templates/search', 'vertical') ?>
         <input type="hidden" name="accion" id="action" value="venta">
         <input type="hidden" name="s" value="">
-      </form>
+      </form> -->
     </div>
     <?php endif; ?>
 
@@ -33,12 +52,13 @@
             <div class="social-icons d-md-none">
               <a href="https://facebook.com/inversionisto" target="_blank"><i class="fab fa-facebook-f"></i></a>
               <a href="https://instagram.com/inversionisto" target="_blank"><i class="fab fa-instagram"></i></a>
-              <a href="mailto:inversionisto@gmail.com" target="_blank"><i class="fa fa-envelope"></i></a>
-              <a href="tel:+18098041718" target="_blank"><i class="fa fa-phone"></i></a>
+              <a href="/contacto/"><i class="fa fa-envelope"></i></a>
+              <a href="tel:+18098041718"><i class="fa fa-phone"></i></a>
             </div>
 
           </div>
           <div class="col-6 col-md-4 text-center">
+            <!-- <i class="fas fa-globe-americas"></i> -->
             <div id="google_translate_element"></div><script type="text/javascript">
             function googleTranslateElementInit() {
               new google.translate.TranslateElement({pageLanguage: 'es', includedLanguages: 'en,es', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
@@ -60,7 +80,7 @@
     <nav class="headerNav navbar navbar-expand-lg fixed-top navbar-light">
 
       <div class="container-fluid">
-        <a class="navbar-brand" href="<?php echo home_url() ?>"><img src="<?php echo get_template_directory_uri() ?>/assets/images/logo@2x.png" alt="<?php bloginfo('name') ?>" height="60" /></a>
+        <a class="navbar-brand" href="<?php echo home_url() ?>"><img class="w-auto" src="<?php echo get_template_directory_uri() ?>/assets/images/logo@2x.png" alt="<?php bloginfo('name') ?>" height="60" /></a>
         <div class="">
           <?php if(wp_is_mobile()) : ?>
           <button class="offcanvas-search-toggler bg-transparent border-0 p-0 mr-2 d-lg-none">

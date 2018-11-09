@@ -18,7 +18,8 @@ body {
   display: none !important;
 }
 
-:focus {
+:focus,
+button:focus {
   outline: none;
   box-shadow: none;
 }
@@ -100,6 +101,10 @@ a:hover {
   font-size: 1.4rem;
 }
 
+.skiptranslate iframe {
+  display: none !important;
+}
+
 .topbar .goog-te-gadget-simple {
   border: 0 !important;
   background-color: transparent !important;
@@ -109,14 +114,30 @@ a:hover {
 .topbar .goog-te-gadget-simple img {
   display: none !important;
 }
+
 .topbar .goog-te-gadget-simple .goog-te-menu-value {
-  color: #bf9002;
-  background-color: #fff;
+  color: #fff;
+  background-color: transparent;
   text-transform: uppercase;
-  padding: 3px 5px;
-  border-radius: 2px;
+  padding: 0;
+  border-radius: 0;
   font-weight: 600;
+  margin: 0;
 }
+
+.topbar .goog-te-gadget-simple .goog-te-menu-value::before {
+  content: "\f57d";
+  font-family: "Font Awesome 5 Free";
+  font-size: 16px;
+  margin-right: 6px;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+}
+
 .goog-te-gadget-simple .goog-te-menu-value>span:nth-of-type(2),
 .goog-te-gadget-simple .goog-te-menu-value>span:nth-of-type(3) {
   display: none;
@@ -1205,12 +1226,30 @@ a.ui-button:active, .ui-button:active,
 
   padding-bottom: 0 !important;
   height: 100%;
-  overflow: hidden;
+  overflow: scroll;
   width: 100%;
 }
 .offcanvas-search .page-header::after {
   left: 50%;
   margin-left: -4rem;
+}
+
+.offcanvas-search.advanced-search .nav-tabs {
+  border-bottom: 0;
+  padding-top: 2rem;
+}
+
+.offcanvas-search.advanced-search .nav-tabs .nav-item {
+  width: 50%;
+  text-align: center;
+}
+.offcanvas-search.advanced-search .nav-tabs .nav-link {
+  margin: 0 10px;
+}
+
+.offcanvas-search.advanced-search .nav-tabs .nav-link.active {
+  border-color: #f8f9fa;
+  background-color: #f8f9fa;
 }
 
 .widget_lidd_mc_widget form {
@@ -1371,6 +1410,32 @@ a.ui-button:active, .ui-button:active,
 
   .newsletter .section-title h2 {
     font-size: 2rem;
+  }
+  .property-carousel.owl-theme .owl-nav {
+    font-size: 79px;
+    margin-top: 0;
+    top: 0;
+  }
+  .property-carousel.owl-theme .owl-nav button {
+    position: absolute;
+    top: 0;
+    left: 0px;
+    margin: 0;
+    background-color: transparent !important;
+  }
+
+  .property-carousel.owl-theme .owl-nav button svg {
+    height: 32px;
+    width: auto;
+  }
+
+  .owl-carousel .owl-nav button.owl-next {
+    left: unset;
+    right: 0;
+  }
+
+  .gform_wrapper .ginput_complex.ginput_container.has_first_name.has_last_name span.name_last {
+    float: none;
   }
 
 }

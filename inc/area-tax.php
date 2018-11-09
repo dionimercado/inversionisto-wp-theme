@@ -7,7 +7,7 @@ function property_area() {
 		'name'                       => _x( 'Sectores', 'Taxonomy General Name', 'inversionisto' ),
 		'singular_name'              => _x( 'Sector', 'Taxonomy Singular Name', 'inversionisto' ),
 		'menu_name'                  => __( 'Sectores', 'inversionisto' ),
-		'all_items'                  => __( 'All Items', 'inversionisto' ),
+		'all_items'                  => __( 'Todos', 'inversionisto' ),
 		'parent_item'                => __( 'Elegir ciudad', 'inversionisto' ),
 		'parent_item_colon'          => __( 'Parent Item:', 'inversionisto' ),
 		'new_item_name'              => __( 'New Item Name', 'inversionisto' ),
