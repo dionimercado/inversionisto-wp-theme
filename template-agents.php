@@ -18,7 +18,7 @@ $banner = wp_get_attachment_image_url( 126, 'full' );
     	// 'roles'          => array('administrator','agent'),
     	// 'number'         => '9',
     	// 'offset'         => '9',
-      // 'exclude'        => array( 1 ),
+      'exclude'        => array( 1 ),
     	'fields'         => 'all_with_meta',
     );
 

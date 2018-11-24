@@ -15,14 +15,14 @@ get_header();
   <section class="featured">
     <div class="container">
       <div class="section-title">
-        <h2><?php _e('Propiedades Destacadas') ?></h2>
-        <p>These are the latest properties in the Sales category. You can create the list using the “latest listing shortcode” and show items by specific categories.</p>
+        <h2><?php the_field('featured_header') ?></h2>
+        <p><?php the_field('featured_header_text') ?></p>
       </div>
       <div class="owl-properties owl-carousel owl-theme">
         <?php
         $featured = new WP_Query(array(
           'post_type' => 'property',
-          'showposts' => 6,
+          'showposts' => get_field('featured_limit'),
           'meta_query' => array(
             array(
               'key' => 'prop_featured',
@@ -44,8 +44,8 @@ get_header();
   <section class="discover bg-white">
     <div class="container">
       <div class="section-title">
-        <h2><?php _e('Encuentra el espacio de tus sueños') ?></h2>
-        <p>These are the latest properties in the Sales category. You can create the list using the “latest listing shortcode” and show items by specific categories.</p>
+        <h2><?php the_field('categories_header') //_e('Encuentra el espacio de tus sueños') ?></h2>
+        <p><?php the_field('categories_header_text') ?></p>
       </div>
       <?php
       if( have_rows('featured_categories', 71) ):
@@ -76,15 +76,15 @@ get_header();
   <div style="clear: both;"></div>
   <section class="recent-properties bg-white">
     <div class="section-title">
-      <h2><?php _e('Propiedades Recientes') ?></h2>
-      <p>These are the latest properties in the Sales category. You can create the list using the “latest listing shortcode” and show items by specific categories.</p>
+      <h2><?php the_field('recents_header') ?></h2>
+      <p><?php the_field('recents_header_text') ?></p>
     </div>
     <div class="container">
       <div class="row">
         <?php
         $properties = new WP_Query(array(
           'post_type' => 'property',
-          'showposts' => 6
+          'showposts' => get_field('recents_limit'),
         ));
 
         while($properties->have_posts()) : $properties->the_post();

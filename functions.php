@@ -81,6 +81,7 @@ function inversionisto_theme_features()  {
 add_action( 'after_setup_theme', 'inversionisto_theme_features' );
 
 
+
 // Register Custom Navigation Walker
 require_once get_stylesheet_directory() . '/inc/class-wp-bootstrap-navwalker.php';
 
@@ -171,6 +172,9 @@ function author_cpt_filter($query) {
     }
 }
 add_action('pre_get_posts','author_cpt_filter');
+
+
+
 
 /**
  * Disable responsive image support (test!)
