@@ -185,8 +185,8 @@
                 </div>
                 <div class="col-lg-5 col-md-6 my-auto text-center text-md-left text-lg-left">
                   <!-- <h2 class="text-white">Contactar Agente</h2> -->
-                  <p class="text-white mb-0"><i class="fas fa-envelope"></i><?php echo $agent_info->user_email ?></p>
-                  <p class="text-white"><i class="fas fa-phone" style="transform: rotate(100deg);"></i><?php echo $agent_info->phone ?></p>
+                  <p class="text-white mb-0 mt-4"><i class="fas fa-envelope"></i><?php echo $agent_info->user_email ?></p>
+                  <a class="btn btn-primary h-auto my-2" href="tel:<?php echo $agent_info->phone ?>" style="background-color: #006900; border-color: #006900;"><i class="fas fa-phone" style="transform: rotate(100deg);"></i><?php echo $agent_info->phone ?></a><br>
                   <!-- <p class="text-dark bg-white py-2 px-3 rounded d-inline-block" style="font-size: 16px; font-weight: 700;"><i class="fas fa-phone mr-3" style="transform: rotate(100deg); font-size: 16px;"></i><?php echo $agent_info->phone ?></p> -->
                   <a data-fancybox data-src="#hidden-content" href="javascript:;" class="btn btn-primary h-auto mb-5" style="background-color: #006900; border-color: #006900;">
                   	Enviar mensaje

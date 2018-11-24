@@ -5,8 +5,8 @@ jQuery(function($) {
   var rent_max_price_usd = 10000;
   var sale_max_price_usd = 1000000;
 
-  var rent_max_price_dop = 500000;
-  var sale_max_price_dop = 50000000;
+  var rent_max_price_dop = 250000;
+  var sale_max_price_dop = 25000000;
 
   updateSearchInputs(currency, action);
 
@@ -108,13 +108,18 @@ jQuery(function($) {
   });
 
   jQuery('.owl-properties').owlCarousel({
-    loop: false,
+    loop: true,
     center:false,
     startPosition: 0,
     margin:20,
     dots: true,
+    nav: true,
+    navText: [
+      '<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24"><path fill="#fff" d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/><path d="M0 0h24v24H0z" fill="none"/></svg>',
+      '<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24"><path fill="#fff" d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/><path d="M0 0h24v24H0z" fill="none"/></svg>'
+    ],
     autoplay: true,
-    autoplayTimeout: 7000,
+    autoplayTimeout: 10000,
     responsive:{
         0:{
             items:1,

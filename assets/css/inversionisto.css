@@ -225,6 +225,24 @@ a:hover {
 .home .featured {
   margin-bottom: 4rem;
 }
+.featured .owl-theme .owl-nav {
+  margin-top: -40px !important;
+}
+.featured .owl-theme .owl-nav button {
+  top: 0 !important;
+  padding: 0 !important;
+  margin: 0;
+  z-index: 999;
+  left: -30px;
+  background-color: #006900 !important;
+  display: block;
+  font-size: 30px !important;
+}
+
+.featured .owl-theme .owl-nav button.owl-next {
+  left: unset;
+  right: -30px;
+}
 
 
 .discover  {
@@ -1367,7 +1385,7 @@ a.ui-button:active, .ui-button:active,
     margin-bottom: 10px;
   }
   .property-carousel .owl-item>div {
-    height: 118px !important;
+    height: 150px !important;
   }
 
   .property-carousel .owl-theme .owl-nav {

@@ -24,7 +24,7 @@ if( $agent_info->profile_picture ) {
     <div style="display: none;" id="hidden-content">
     	<h2>Enviar Mensaje a <span style="color: #bf9002"><?php echo $agent_info->first_name ?> <?php echo $agent_info->last_name ?></span></h2>
       <div class="mt-5">
-        <?php echo gravity_form( 2, false, false, false, array(agente => $agent_info->user_email, propiedad => get_the_permalink($post->ID)), true ); //do_shortcode('[gravityform id="2" title="false" description="false" ajax="true" field_values="Email=me@dionimercado.com"]') ?>
+        <?php echo gravity_form( 2, false, false, false, array('agente' => $agent_info->user_email, 'propiedad' => get_the_permalink($post->ID)), true ); //do_shortcode('[gravityform id="2" title="false" description="false" ajax="true" field_values="Email=me@dionimercado.com"]') ?>
       </div>
     </div>
 

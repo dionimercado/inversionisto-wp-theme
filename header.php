@@ -40,34 +40,34 @@
     <div class="topbar fixed-top">
       <div class="container-fluid">
         <div class="row">
-          <div class="col-6 col-md-4">
-            <a href="tel:18098041718" class="mr-3 d-none d-md-inline-block">
-              <i class="fas fa-phone" style="transform: rotate(100deg);"></i>
-              <span class="d-none d-md-inline-block">1-809-804-1718</span>
-            </a>
-            <a href="mailto:inversionisto@gmail.com" class="d-none d-md-inline-block">
-              <i class="fas fa-envelope"></i>
-              <span class="d-none d-md-inline-block">inversionisto@gmail.com</span>
-            </a>
-            <div class="social-icons d-md-none">
-              <a href="https://facebook.com/inversionisto" target="_blank"><i class="fab fa-facebook-f"></i></a>
-              <a href="https://instagram.com/inversionisto" target="_blank"><i class="fab fa-instagram"></i></a>
-              <a href="/contacto/"><i class="fa fa-envelope"></i></a>
-              <a href="tel:+18098041718"><i class="fa fa-phone"></i></a>
+          <div class="col-12 col-md-8">
+            <div class="d-flex justify-content-between justify-content-md-start">
+              <a href="tel:18098041718" class="mr-3 d-none d-md-inline-block">
+                <i class="fas fa-phone" style="transform: rotate(100deg);"></i>
+                <span class="d-none d-md-inline-block">1-809-804-1718</span>
+              </a>
+              <a href="mailto:inversionisto@gmail.com" class="d-none d-md-inline-block">
+                <i class="fas fa-envelope"></i>
+                <span class="d-none d-md-inline-block">inversionisto@gmail.com</span>
+              </a>
+              <div class="social-icons d-inline-block d-md-none">
+                <a href="https://facebook.com/inversionisto" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://instagram.com/inversionisto" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="/contacto/"><i class="fa fa-envelope"></i></a>
+                <a href="tel:+18098041718"><i class="fa fa-phone"></i></a>
+              </div>
+              <div class="d-inline-block ml-auto ml-md-4 pr-5">
+                <div id="google_translate_element"></div><script type="text/javascript">
+                function googleTranslateElementInit() {
+                  new google.translate.TranslateElement({pageLanguage: 'es', includedLanguages: 'en,es', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+                }
+                </script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+              </div>
             </div>
-
-          </div>
-          <div class="col-6 col-md-4 text-center">
-            <!-- <i class="fas fa-globe-americas"></i> -->
-            <div id="google_translate_element"></div><script type="text/javascript">
-            function googleTranslateElementInit() {
-              new google.translate.TranslateElement({pageLanguage: 'es', includedLanguages: 'en,es', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
-            }
-            </script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
           </div>
           <div class="col-md-4 text-md-right d-none d-md-block">
             <div class="social-icons">
+              <a href="/wp-admin/" class="mr-5"><i class="fas fa-unlock"></i> Agentes</a>
               <a href="https://facebook.com/inversionisto" target="_blank"><i class="fab fa-facebook-f"></i></a>
               <a href="https://instagram.com/inversionisto" target="_blank"><i class="fab fa-instagram"></i></a>
               <a href="mailto:inversionisto@gmail.com" target="_blank"><i class="fa fa-envelope"></i></a>

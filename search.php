@@ -111,20 +111,38 @@
                 $precio_desde = (float)str_replace(",","",$_GET['precio_desde']);
                 $precio_hasta = (float)str_replace(",","",$_GET['precio_hasta']);
 
-                if( $_GET['moneda'] == "dop" ) {
-                  $meta_query[] = array(
-                    'key'     => 'property_price_dop',
-                    'value'   => array($precio_desde, $precio_hasta),
-                    'compare' => 'BETWEEN',
-                    'type'    => 'numeric'
-                  );
+                if( $prop_action == "alquiler" && $precio_hasta > 250000 || $prop_action == "venta" && $precio_hasta > 250000000 ) {
+                  if( $_GET['moneda'] == "dop" ) {
+                    $meta_query[] = array(
+                      'key'     => 'property_price_dop',
+                      'value'   => $precio_desde,
+                      'compare' => '>',
+                      'type'    => 'numeric'
+                    );
+                  }else{
+                    $meta_query[] = array(
+                      'key'     => 'property_price_usd',
+                      'value'   => $precio_desde,
+                      'compare' => '>',
+                      'type'    => 'numeric'
+                    );
+                  }
                 }else{
-                  $meta_query[] = array(
-                    'key'     => 'property_price_usd',
-                    'value'   => array($precio_desde, $precio_hasta),
-                    'compare' => 'BETWEEN',
-                    'type'    => 'numeric'
-                  );
+                  if( $_GET['moneda'] == "dop" ) {
+                    $meta_query[] = array(
+                      'key'     => 'property_price_dop',
+                      'value'   => array($precio_desde, $precio_hasta),
+                      'compare' => 'BETWEEN',
+                      'type'    => 'numeric'
+                    );
+                  }else{
+                    $meta_query[] = array(
+                      'key'     => 'property_price_usd',
+                      'value'   => array($precio_desde, $precio_hasta),
+                      'compare' => 'BETWEEN',
+                      'type'    => 'numeric'
+                    );
+                  }
                 }
               }
 
