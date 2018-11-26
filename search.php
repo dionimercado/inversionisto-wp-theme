@@ -111,28 +111,28 @@
                 $precio_desde = (float)str_replace(",","",$_GET['precio_desde']);
                 $precio_hasta = (float)str_replace(",","",$_GET['precio_hasta']);
 
-                if( $prop_action == "alquiler" && $precio_hasta > 250000 || $prop_action == "venta" && $precio_hasta > 250000000 ) {
-                  if( $_GET['moneda'] == "dop" ) {
+                if($_GET['moneda'] == "dop") {
+                  if( $prop_action == "alquiler" && $precio_hasta == 250000 || $prop_action == "venta" && $precio_hasta == 25000000) {
                     $meta_query[] = array(
                       'key'     => 'property_price_dop',
                       'value'   => $precio_desde,
-                      'compare' => '>',
+                      'compare' => '>=',
                       'type'    => 'numeric'
                     );
                   }else{
                     $meta_query[] = array(
-                      'key'     => 'property_price_usd',
-                      'value'   => $precio_desde,
-                      'compare' => '>',
+                      'key'     => 'property_price_dop',
+                      'value'   => array($precio_desde, $precio_hasta),
+                      'compare' => 'BETWEEN',
                       'type'    => 'numeric'
                     );
                   }
                 }else{
-                  if( $_GET['moneda'] == "dop" ) {
+                  if( $prop_action == "alquiler" && $precio_hasta == 10000 || $prop_action == "venta" && $precio_hasta == 100000000) {
                     $meta_query[] = array(
-                      'key'     => 'property_price_dop',
-                      'value'   => array($precio_desde, $precio_hasta),
-                      'compare' => 'BETWEEN',
+                      'key'     => 'property_price_usd',
+                      'value'   => $precio_desde,
+                      'compare' => '>=',
                       'type'    => 'numeric'
                     );
                   }else{

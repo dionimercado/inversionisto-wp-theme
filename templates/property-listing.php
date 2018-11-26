@@ -14,6 +14,9 @@ foreach ($opportunity as $key => $value) {
 ?>
 
 <div class="property_listing h-100">
+  <?php if(get_post_meta($post->ID, 'status', true) == "Vendido" || get_post_meta($post->ID, 'status', true) == "Alquilado") : ?>
+    <div class="ribbon"><span class="text-uppercase"><?php echo get_post_meta($post->ID, 'status', true) ?></span></div>
+  <?php endif; ?>
   <a href="<?php the_permalink() ?>">
     <figure>
       <picture>
