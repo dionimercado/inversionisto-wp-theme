@@ -1,4 +1,10 @@
-<?php get_header() ?>
+<?php
+/*
+ * Template Name: Full Width
+ * Template Post Type: page
+ */
+
+ get_header() ?>
 
 <?php
   while(have_posts()): the_post();
@@ -18,16 +24,12 @@
   </header>
   <?php endif; ?>
 
-  <div class="container">
-    <div class="row">
-      <div class="col-md-9">
-        <article class="blog-post">
-          <div class="">
-            <?php the_content() ?>
-          </div>
-        </article>
+  <div class="container-fluid">
+    <article class="blog-post">
+      <div class="">
+        <?php the_content() ?>
       </div>
-    </div>
+    </article>
   </div>
 </main>
 <?php endwhile; ?>

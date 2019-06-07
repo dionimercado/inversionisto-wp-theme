@@ -1,7 +1,7 @@
 <?php
 /*
  * Template Name: Full Width
- * Template Post Type: post, page
+ * Template Post Type: post
  */
 
  get_header();  ?>
@@ -13,9 +13,11 @@
 ?>
 
 <main class="wrapper">
+  <?php if(get_post_meta( $post->ID, '_thumbnail_id', true)) : ?>
   <header class="header_image" style="background-image: url(<?php echo $img_src ?>);">
 
   </header>
+  <?php endif; ?>
   <div class="container">
     <div class="row">
       <div class="col-12">

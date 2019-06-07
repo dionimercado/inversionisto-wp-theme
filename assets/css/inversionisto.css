@@ -1322,6 +1322,10 @@ a.ui-button:active, .ui-button:active,
   font-size: 1.4rem;
 }
 
+.single-property .owl-theme .owl-nav {
+  display: none;
+}
+
 @media screen and (max-width: 992px) {
   body.logged-in.admin-bar {
     padding-top: 30px !important;
@@ -1403,7 +1407,7 @@ a.ui-button:active, .ui-button:active,
   }
 
   .price_area {
-    font-size: 24px;
+    font-size: 20px;
   }
 
   .jetpack_widget_social_icons li,

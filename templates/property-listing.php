@@ -6,7 +6,7 @@ $property_area              =   get_the_terms($post->ID, 'prop_area');
 $opportunity                =   get_the_terms($post->ID, 'prop_category');
 $is_opportunity             =   false;
 foreach ($opportunity as $key => $value) {
-  if($value->slug == "oportunidades") {
+  if($value->slug == "oportunidades-de-inversion") {
     $is_opportunity = true;
   }
 }

@@ -33,7 +33,7 @@
           <h2 class="post-title mt-5"><?php the_title() ?></h2>
           <hr>
           <div class="row py-3">
-            <div class="property-meta col-6">
+            <div class="property-meta col-7">
               <div class="property_categs">
                 <a href="<?php echo get_term_link($property_category[0]) ?>"><?php echo $property_category[0]->name ?></a> en <?php echo $property_action ?>
               </div>
@@ -43,7 +43,7 @@
                 <?php //echo $property_city ?>
               </span>
             </div>
-            <div class="col-6">
+            <div class="col-5">
               <?php get_template_part('templates/property', 'price') ?>
             </div>
 
