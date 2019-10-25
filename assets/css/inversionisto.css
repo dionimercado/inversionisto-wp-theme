@@ -1433,7 +1433,7 @@ a.ui-button:active, .ui-button:active,
     margin-bottom: 10px;
   }
   .property-carousel .owl-item>div {
-    height: 150px !important;
+    height: 250px !important;
   }
 
   .property-carousel .owl-theme .owl-nav {

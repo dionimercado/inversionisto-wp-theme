@@ -91,7 +91,7 @@ jQuery(function($) {
     items: 1,
     navSpeed: 800,
 
-    // autoWidth:true,
+    autoWidth:true,
     autoHeight:true,
     responsiveClass:true,
     responsive: {

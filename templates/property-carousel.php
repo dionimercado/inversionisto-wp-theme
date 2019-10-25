@@ -4,7 +4,7 @@ $images = get_field('property_gallery', get_the_ID());
 
 if( $images ): ?>
   <div class="property-carousel owl-carousel owl-theme">
-    <?php 
+    <?php
     foreach( $images as $image ):
 
       $img_src = wp_get_attachment_image_url( $image['ID'], 'large' );
@@ -13,7 +13,7 @@ if( $images ): ?>
       ?>
       <div style="overflow: hidden; height: 58rem;">
         <a data-fancybox="gallery" href="<?php echo wp_get_attachment_image_url($image['ID'], 'full') ?>">
-          <img src="<?php echo esc_url( $img_src ); ?>&resize=1280%2C950" class="img-fluid" alt="<?php the_title() ?>">
+          <img src="<?php echo esc_url( $img_src ); ?>&resize=1280%2C950" class="w-auto h-100" alt="<?php the_title() ?>">
       	   <?php //echo wp_get_attachment_image( $image['ID'], $size ); ?>
         </a>
       </div>

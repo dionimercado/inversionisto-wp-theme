@@ -35,7 +35,7 @@
   </header>
   <div class="container">
     <div class="row">
-      <div class="col-md-9">
+      <div class="col-lg-9">
         <article class="single-property">
           <h2 class="post-title mt-5"><?php the_title() ?></h2>
           <hr>
@@ -237,7 +237,7 @@
           </div>
         </article>
       </div>
-      <div class="col-md-3">
+      <div class="col-lg-3">
         <?php get_sidebar() ?>
       </div>
     </div>
