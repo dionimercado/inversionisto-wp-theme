@@ -9,6 +9,7 @@ if( $agent_info->profile_picture ) {
 
 ?>
 <aside class="sidebar mt-5">
+
   <div class="border rounded d-none d-md-block">
     <img class="w-100 rounded-top" src="<?php echo $profile ?>" alt="<?php echo $agent_info->first_name ?> <?php echo $agent_info->last_name ?>">
     <div class="p-4">

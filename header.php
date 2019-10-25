@@ -80,7 +80,7 @@
     <nav class="headerNav navbar navbar-expand-lg fixed-top navbar-light">
 
       <div class="container-fluid">
-        <a class="navbar-brand" href="<?php echo home_url() ?>"><img class="w-auto" src="<?php echo get_template_directory_uri() ?>/assets/images/logo@2x.png" alt="<?php bloginfo('name') ?>" height="60" /></a>
+        <a class="navbar-brand" href="<?php echo home_url() ?>"><img class="w-auto p-2" src="<?php echo get_template_directory_uri() ?>/assets/images/logo@2x.png" alt="<?php bloginfo('name') ?>" height="60" /></a>
         <div class="">
           <?php if(wp_is_mobile()) : ?>
           <button class="offcanvas-search-toggler bg-transparent border-0 p-0 mr-2 d-lg-none">

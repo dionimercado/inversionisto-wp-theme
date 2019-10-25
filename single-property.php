@@ -20,6 +20,13 @@
     $profile = wp_get_attachment_image_url( 124, 'medium' );
   }
 
+  // $phone = "+44 845-643 9287";
+  // ## removing anything but digits
+  // $phone = preg_replace('/[^0-9]/', '', $phone);
+  // ## converting into the desired format
+  // $phone = preg_replace('/(\d\d)(\d\d\d)(\d\d\d)(\d\d\d\d)/', "<a href=\"tel:+$phone\">+$1 $2 $3 $4</a>", $phone);
+  // echo "$phone\n";
+
 ?>
 
 <main class="wrapper" style="margin-top: 85px;">
@@ -188,7 +195,8 @@
                   <p class="text-white mb-0 mt-4"><i class="fas fa-envelope"></i><?php echo $agent_info->user_email ?></p>
                   <a class="btn btn-primary h-auto my-2" href="tel:<?php echo $agent_info->phone ?>" style="background-color: #006900; border-color: #006900;"><i class="fas fa-phone" style="transform: rotate(100deg);"></i><?php echo $agent_info->phone ?></a><br>
                   <!-- <p class="text-dark bg-white py-2 px-3 rounded d-inline-block" style="font-size: 16px; font-weight: 700;"><i class="fas fa-phone mr-3" style="transform: rotate(100deg); font-size: 16px;"></i><?php echo $agent_info->phone ?></p> -->
-                  <a data-fancybox data-src="#hidden-content" href="javascript:;" class="btn btn-primary h-auto mb-5" style="background-color: #006900; border-color: #006900;">
+                  <a class="btn btn-primary h-auto mb-5 d-md-none" style="background-color: #006900; border-color: #006900;" target="_blank" href="https://wa.me/1<?php echo preg_replace('/[^0-9]/', '', $agent_info->phone) ?>?text=Hola <?php echo $agent_info->first_name ?>, estoy interesado en saber m&aacute;s informaci&oacute;n sobre esta propiedad <?php the_permalink() ?>"><i class="fab fa-whatsapp"></i> Enviar Mensaje</a>
+                  <a data-fancybox data-src="#hidden-content" href="javascript:;" class="btn btn-primary h-auto mb-5 d-none d-md-inline-block" style="background-color: #006900; border-color: #006900;">
                   	Enviar mensaje
                   </a>
                 </div>
@@ -204,7 +212,7 @@
             $similar = new WP_Query(array(
               'post_type' => 'property',
               'showposts' => 6,
-              'post__not_in' => get_the_ID(),
+              // 'post__not_in' => get_the_ID(),
               'tax_query' => array(
                   'relation' => 'AND',
                   array(
