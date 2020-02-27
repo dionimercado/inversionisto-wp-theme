@@ -1326,6 +1326,44 @@ a.ui-button:active, .ui-button:active,
   display: none;
 }
 
+.whatsapp-bubble {
+  height: 60px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 12px;
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+  background-color: rgb(255, 255, 255);
+  margin-bottom: 16px;
+  margin-right: 16px;
+  margin-left: 16px;
+  width: 60px;
+  border-radius: 50%;
+  outline: transparent;
+}
+
+.whatsapp-bubble::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background-color: rgb(255, 0, 0);
+  display: block;
+  position: absolute;
+  z-index: 1;
+  right: 4px;
+  top: 4px;
+  border-radius: 50%;
+}
+
+.whatsapp-bubble a {
+  font-size: 32px;
+  color: #4fce5d;
+}
+
 @media screen and (max-width: 992px) {
   body.logged-in.admin-bar {
     padding-top: 30px !important;
