@@ -1364,6 +1364,73 @@ a.ui-button:active, .ui-button:active,
   color: #4fce5d;
 }
 
+.whatsapp-banner {
+  background-color: #2db742;
+  padding: 30px 0;
+  text-align: center;
+  position: relative;
+}
+
+.whatsapp-banner::before {
+  content: "";
+  display: block;
+  background: url(https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500) -10px -70px;
+  position: absolute;
+  z-index: 0;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0.2;
+}
+
+.whatsapp-banner::after {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: 0;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 1;
+  background-color: #2db742;
+  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, #2db742 100%);
+
+}
+
+.whatsapp-banner > i {
+  position: absolute;
+  z-index: 1;
+  font-size: 120px;
+  right: 0;
+  bottom: 0;
+  opacity: 0.1;
+  color: #fff;
+}
+
+.whatsapp-banner .text {
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: bold;
+  z-index: 1;
+  position: relative;
+}
+
+.whatsapp-banner .btn {
+  color: #2db742;
+  font-size: 16px;
+  font-weight: 400;
+  border-radius: 4px;
+  background-color: #fff;
+  padding: 5px 12px;
+  text-transform: none;
+  margin-top: 20px;
+  z-index: 1;
+  position: relative;
+}
+
 @media screen and (max-width: 992px) {
   body.logged-in.admin-bar {
     padding-top: 30px !important;

@@ -4,7 +4,7 @@
 get_header();
 ?>
 
-<section class="position-relative" style="margin-top: 85px;">
+<section class="position-relative" style="margin-top: 67px;">
   <?php echo do_shortcode('[rev_slider alias="home-slider"]') ?>
   <div class="advanced-search d-none d-lg-block">
     <?php get_template_part('templates/advanced', 'search') ?>
@@ -12,6 +12,14 @@ get_header();
 </section>
 
 <main class="bg-light">
+
+  <section class="whatsapp-banner d-md-none">
+    <i class="fab fa-whatsapp"></i>
+    <div class="container">
+      <a href="https://wa.me/18098041718?text=¡Hola, me gustaría recibir asesoría gratuita y opciones para invertir en bienes raíces!" class="text">Recibe Asesoría Gratuita e Invierte Inteligentemente en Bienes Raíces </a>
+      <a href="https://wa.me/18098041718?text=¡Hola, me gustaría recibir asesoría gratuita y opciones para invertir en bienes raíces!" class="btn"><i class="fab fa-whatsapp"></i> Hablemos via WhatsApp</a>
+    </div>
+  </section>
   <section class="featured">
     <div class="container">
       <div class="section-title">
