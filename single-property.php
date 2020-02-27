@@ -29,7 +29,7 @@
 
 ?>
 
-<main class="wrapper" style="margin-top: 85px;">
+<main class="wrapper" style="margin-top: 77px;">
   <header class="">
     <?php get_template_part('templates/property', 'carousel') ?>
   </header>
@@ -243,7 +243,7 @@
     </div>
   </div>
 </main>
-<div class="d-block d-md-none" style="position: fixed; right: 0; bottom: 0; z-index: 9999;">
+<div class="d-block d-md-none" style="position: fixed; right: 0; top: calc(50% - 80px); z-index: 9999;">
   <div class="whatsapp-bubble">
     <a href="https://wa.me/1<?php echo preg_replace('/[^0-9]/', '', $agent_info->phone) ?>?text=Hola <?php echo $agent_info->first_name ?>, estoy interesado en saber m&aacute;s informaci&oacute;n sobre esta propiedad <?php the_permalink() ?>" target="_blank"><i class="fab fa-whatsapp"></i></a>
   </div>

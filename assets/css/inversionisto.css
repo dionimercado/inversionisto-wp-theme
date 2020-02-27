@@ -1339,7 +1339,7 @@ a.ui-button:active, .ui-button:active,
   position: relative;
   background-color: rgb(255, 255, 255);
   margin-bottom: 16px;
-  margin-right: 16px;
+  margin-right: 7px;
   margin-left: 16px;
   width: 60px;
   border-radius: 50%;
