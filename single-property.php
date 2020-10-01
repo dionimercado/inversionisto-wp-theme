@@ -193,10 +193,10 @@
                 <div class="col-lg-5 col-md-6 my-auto text-center text-md-left text-lg-left">
                   <!-- <h2 class="text-white">Contactar Agente</h2> -->
                   <p class="text-white mb-0 mt-4"><i class="fas fa-envelope"></i><?php echo $agent_info->user_email ?></p>
-                  <a class="btn btn-primary h-auto my-2" href="tel:<?php echo $agent_info->phone ?>" style="background-color: #006900; border-color: #006900;"><i class="fas fa-phone" style="transform: rotate(100deg);"></i><?php echo $agent_info->phone ?></a><br>
+                  <a data-origin="<?php echo get_the_ID() ?>" data-agent="<?php echo $post->post_author ?>" data-source="Phone" data-ip="<?php echo $_SERVER['REMOTE_ADDR'] ?>" class="btn btn-primary h-auto my-2 inversionisto-tracking" href="tel:<?php echo $agent_info->phone ?>" style="background-color: #006900; border-color: #006900;"><i class="fas fa-phone" style="transform: rotate(100deg);"></i><?php echo $agent_info->phone ?></a><br>
                   <!-- <p class="text-dark bg-white py-2 px-3 rounded d-inline-block" style="font-size: 16px; font-weight: 700;"><i class="fas fa-phone mr-3" style="transform: rotate(100deg); font-size: 16px;"></i><?php echo $agent_info->phone ?></p> -->
-                  <a class="btn btn-primary h-auto mb-5 d-md-none" style="background-color: #006900; border-color: #006900;" target="_blank" href="https://wa.me/1<?php echo preg_replace('/[^0-9]/', '', $agent_info->phone) ?>?text=Hola <?php echo $agent_info->first_name ?>, estoy interesado en saber m&aacute;s informaci&oacute;n sobre esta propiedad <?php the_permalink() ?>"><i class="fab fa-whatsapp"></i> Enviar Mensaje</a>
-                  <a data-fancybox data-src="#hidden-content" href="javascript:;" class="btn btn-primary h-auto mb-5 d-none d-md-inline-block" style="background-color: #006900; border-color: #006900;">
+                  <a data-origin="<?php echo get_the_ID() ?>" data-agent="<?php echo $post->post_author ?>" data-source="WhatsApp" data-ip="<?php echo $_SERVER['REMOTE_ADDR'] ?>" class="btn btn-primary h-auto mb-5 d-md-none inversionisto-tracking" style="background-color: #006900; border-color: #006900;" target="_blank" href="https://wa.me/1<?php echo preg_replace('/[^0-9]/', '', $agent_info->phone) ?>?text=Hola <?php echo $agent_info->first_name ?>, estoy interesado en saber m&aacute;s informaci&oacute;n sobre esta propiedad <?php the_permalink() ?>"><i class="fab fa-whatsapp"></i> Enviar Mensaje</a>
+                  <a  data-origin="<?php echo get_the_ID() ?>" data-agent="<?php echo $post->post_author ?>" data-source="Email" data-ip="<?php echo $_SERVER['REMOTE_ADDR'] ?>" data-fancybox data-src="#hidden-content" href="javascript:;" class="btn btn-primary h-auto mb-5 d-none d-md-inline-block inversionisto-tracking" style="background-color: #006900; border-color: #006900;">
                   	Enviar mensaje
                   </a>
                 </div>
@@ -245,7 +245,7 @@
 </main>
 <div class="d-block d-md-none" style="position: fixed; right: 0; top: calc(50% - 80px); z-index: 9999;">
   <div class="whatsapp-bubble">
-    <a href="https://wa.me/1<?php echo preg_replace('/[^0-9]/', '', $agent_info->phone) ?>?text=Hola <?php echo $agent_info->first_name ?>, estoy interesado en saber m&aacute;s informaci&oacute;n sobre esta propiedad <?php the_permalink() ?>" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <a class="inversionisto-tracking" data-origin="<?php echo get_the_ID() ?>" data-agent="<?php echo $post->post_author ?>" data-source="WhatsApp" data-ip="<?php echo $_SERVER['REMOTE_ADDR'] ?>" href="https://wa.me/1<?php echo preg_replace('/[^0-9]/', '', $agent_info->phone) ?>?text=Hola <?php echo $agent_info->first_name ?>, estoy interesado en saber m&aacute;s informaci&oacute;n sobre esta propiedad <?php the_permalink() ?>" target="_blank"><i class="fab fa-whatsapp"></i></a>
   </div>
 </div>
 <?php endwhile; ?>

@@ -1,5 +1,20 @@
 <?php get_header(); ?>
 
+<?php
+// $args = array( 'numberposts' => -1, 'post_type' => 'property' );
+// $postslist = get_posts( $args );
+// foreach ($postslist as $post) :  setup_postdata($post);
+// $post_id = get_the_ID(); // use this variable
+// // do stuff here
+// if(!get_post_meta($post_id, 'sticky')) {
+//   update_post_meta($post_id, 'sticky', '0');
+// }
+
+// endforeach;
+
+$paged = get_query_var('paged') ? get_query_var('paged') : 1;
+
+?>
 <main class="wrapper pt-md-5" style="margin-top: 85px">
   <section class="recent-properties">
     <div class="container-fluid">
@@ -26,6 +41,7 @@
           </div>
         </div>
         <div class="col-md-8 col-lg-9">
+
           <div class="row my-5">
             <?php
 
@@ -80,7 +96,6 @@
 
           	// base query arguments for home page properties
 
-              $paged = get_query_var('paged') ? get_query_var('paged') : 1;
 
 
               if( !empty($_GET['habitaciones']) && $_GET['habitaciones'] != 'any' ){
@@ -106,6 +121,13 @@
                   'compare' => '>=',
                 );
               }
+
+
+              $meta_query[] = array(
+                'key' => 'sticky',
+                'value' => 0,
+                'compare' => '==',
+              );
 
               if(!empty($_GET['precio_desde']) || !empty($_GET['precio_hasta'])) {
                 $precio_desde = (float)str_replace(",","",$_GET['precio_desde']);
@@ -160,8 +182,18 @@
 
             	$search_args = array(
         				'post_type' => 'property',
-        				'posts_per_page' => 12,
-        				'paged' => $paged
+        				'posts_per_page' => 30, // $paged === 1 ? 18 : 30,
+        				'paged' => $paged,
+                // 'meta_key' => 'sticky',
+                // 'orderby' => 'sticky',
+                // 'orderby' => 'meta_value',
+                // 'order'   => 'DESC',
+                // 'orderby' => array(
+                //   // 'modified' => 'DESC',
+                //   'sticky' => 'DESC',
+                //   // 'date' => 'DESC'
+                // )
+
             	);
 
 
@@ -185,6 +217,11 @@
                   <p>Resultados Busqueda: <strong><?php echo $query->found_posts ?> inmuebles</strong></p>
                 </div>
               </div>
+
+            <?php if($paged === 1) : ?>
+              <?php get_template_part('templates/sticky', 'properties') ?>
+            <?php endif; ?>
+
             <?php while( $query->have_posts() ) : $query->the_post(); ?>
             <div class="col-md-6 col-lg-4 mb-5">
               <?php get_template_part('templates/property', 'listing') ?>

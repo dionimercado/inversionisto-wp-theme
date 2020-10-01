@@ -19,7 +19,7 @@ if( $agent_info->profile_picture ) {
       <p class="text-black-50"><?php echo $agent_info->user_email ?></p>
       <p class="text-black-50">@<?php echo $agent_info->instagram ?></p>
     </div>
-    <a data-fancybox data-src="#hidden-content" href="javascript:;" class="btn btn-primary h-auto m-4" style="background-color: #006900; border-color: #006900;">
+    <a data-fancybox data-src="#hidden-content" href="javascript:;" class="btn btn-primary h-auto m-4 inversionisto-tracking"  data-origin="<?php echo get_the_ID() ?>" data-agent="<?php echo $post->post_author ?>" data-source="Email" data-ip="<?php echo $_SERVER['REMOTE_ADDR'] ?>" style="background-color: #006900; border-color: #006900;">
     	Enviar mensaje
     </a>
     <div style="display: none;" id="hidden-content">

@@ -63,3 +63,62 @@ function property_cpt() {
 
 }
 add_action( 'init', 'property_cpt', 0 );
+
+
+
+add_filter( 'manage_property_posts_columns', 'property_filter_posts_columns' );
+function property_filter_posts_columns( $columns ) {
+
+
+  $columns['prop_featured'] = __( 'Destacada' );
+  $columns['sticky'] = __( 'Fijo', 'inversionisto' );
+	// unset($columns['date']);
+
+  return $columns;
+}
+
+
+
+add_action( 'manage_property_posts_custom_column', 'property_realestate_column', 10, 2);
+function property_realestate_column( $column, $post_id ) {
+
+
+  if ( 'prop_featured' === $column ) {
+		echo get_post_meta( $post_id, 'prop_featured', true ) == '1' ? 'Si' : 'No';
+  }
+
+  if ( 'sticky' === $column ) {
+    echo get_post_meta( $post_id, 'sticky', true ) == '1' ? 'Si' : 'No';
+  }
+
+}
+
+
+add_filter( 'manage_edit-property_sortable_columns', 'my_sortable_property_column' );
+function my_sortable_property_column( $columns ) {
+    $columns['sticky'] = 'sticky';
+    $columns['prop_featured'] = 'prop_featured';
+
+    //To make a column 'un-sortable' remove it from the array
+    //unset($columns['date']);
+
+  	return $columns;
+	}
+
+add_action( 'pre_get_posts', 'my_sticky_orderby' );
+function my_sticky_orderby( $query ) {
+    if( ! is_admin() )
+        return;
+
+    $orderby = $query->get( 'orderby');
+
+    if( 'sticky' == $orderby ) {
+        $query->set('meta_key','sticky');
+        $query->set('orderby','meta_value_num');
+    }
+
+    if( 'prop_featured' == $orderby ) {
+        $query->set('meta_key','prop_featured');
+        $query->set('orderby','meta_value_num');
+    }
+}

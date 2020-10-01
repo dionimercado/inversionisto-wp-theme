@@ -24,15 +24,15 @@ if( $agent_info->profile_picture ) {
         <h2 class="text-white"><?php echo $agent_info->first_name ?> <?php echo $agent_info->last_name ?></h2>
         <h3 class="text-white-50"><?php echo $agent_info->position ?></h3>
         <div class="d-flex justify-content-center mt-4">
-          <a href="tel:<?php echo $agent_info->phone ?>">
+          <a class="inversionisto-tracking" data-origin="-1" data-agent="<?php echo $post->post_author ?>" data-source="Phone" data-ip="<?php echo $_SERVER['REMOTE_ADDR'] ?>" href="tel:<?php echo $agent_info->phone ?>">
             <span class="contact-icon" style="transform: rotate(100deg);"><i class="fa fa-phone"></i></span>
             <!-- <span><?php echo $agent_info->phone ?></span> -->
           </a>
-          <a href="mailto:<?php echo $agent_info->user_email ?>">
+          <a class="inversionisto-tracking" data-origin="-1" data-agent="<?php echo $post->post_author ?>" data-source="Email" data-ip="<?php echo $_SERVER['REMOTE_ADDR'] ?>" href="mailto:<?php echo $agent_info->user_email ?>">
             <span class="contact-icon"><i class="fa fa-envelope"></i></span>
             <!-- <span><?php echo $agent_info->user_email ?>/span> -->
           </a>
-          <a href="https://instagram.com/<?php echo $agent_info->instagram ?>">
+          <a target="_blank" class="inversionisto-tracking" data-origin="-1" data-agent="<?php echo $post->post_author ?>" data-source="Instagram" data-ip="<?php echo $_SERVER['REMOTE_ADDR'] ?>" href="https://instagram.com/<?php echo $agent_info->instagram ?>">
             <span class="contact-icon"><i class="fab fa-instagram"></i></span>
             <!-- <span>@<?php echo $agent_info->instagram ?></span> -->
           </a>

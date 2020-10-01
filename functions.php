@@ -86,6 +86,9 @@ add_action( 'after_setup_theme', 'inversionisto_theme_features' );
 require_once get_stylesheet_directory() . '/inc/class-wp-bootstrap-navwalker.php';
 
 // Register Property CPT
+require_once get_stylesheet_directory() . '/inc/tracking-cpt.php';
+
+// Register Property CPT
 require_once get_stylesheet_directory() . '/inc/property-cpt.php';
 
 
@@ -213,4 +216,61 @@ function twenty_ten_infinite_scroll_render() {
 	</div>
 	<?php endwhile;
 }
-?>
+
+
+
+
+
+
+
+
+
+function add_ajax_scripts() {
+    wp_enqueue_script( 'ajaxcalls', get_template_directory_uri() . '/assets/js/ajax-calls.js', array(), uniqid(), true );
+
+    wp_localize_script( 'ajaxcalls', 'ajax_object', array(
+        'ajaxurl' => admin_url( 'admin-ajax.php' ),
+        'ajaxnonce' => wp_create_nonce( 'ajax_post_validation' )
+    ) );
+}
+
+add_action( 'wp_enqueue_scripts', 'add_ajax_scripts' );
+
+
+
+function inversionito_track_click() {
+
+	$origin_id = $_POST['origin_id'];
+	$agent_id = $_POST['agent_id'];
+	$source = $_POST['source'];
+	$ip_address = $_POST['ip_address'];
+
+	$new = array(
+	    'post_title' => 'Tracking',
+	    'post_content' => '',
+			'post_type' => 'tracking',
+	    'post_status' => 'publish',
+			'post_author' => $agent_id
+	);
+
+	$post_id = wp_insert_post( $new );
+
+	if( $post_id ){
+		update_post_meta( $post_id, 'source', $source );
+		update_post_meta( $post_id, 'agent_id', $agent_id );
+		update_post_meta( $post_id, 'origin_id', $origin_id );
+		update_post_meta( $post_id, 'ip_address', $ip_address );
+	} else {
+    echo "Something went wrong, try again.";
+	}
+
+
+    wp_die();
+}
+
+add_action( 'wp_ajax_nopriv_inversionito_track_click', 'inversionito_track_click' );
+
+function property_add_default_meta($post_id) {
+	update_field('sticky', '0', $post_id);
+}
+add_action( 'publish_property', 'property_add_default_meta', 10, 2 );

@@ -16,8 +16,8 @@ get_header();
   <section class="whatsapp-banner d-md-none">
     <i class="fab fa-whatsapp"></i>
     <div class="container">
-      <a href="https://wa.me/18098041718?text=¡Hola, me gustaría recibir asesoría gratuita y opciones para invertir en bienes raíces!" class="text">Recibe Asesoría Gratuita e Invierte Inteligentemente en Bienes Raíces </a>
-      <a href="https://wa.me/18098041718?text=¡Hola, me gustaría recibir asesoría gratuita y opciones para invertir en bienes raíces!" class="btn"><i class="fab fa-whatsapp"></i> Hablemos via WhatsApp</a>
+      <a target="_blank" data-origin="0" data-agent="<?php echo $post->post_author ?>" data-source="WhatsApp" data-ip="<?php echo $_SERVER['REMOTE_ADDR'] ?>" href="https://wa.me/18098041718?text=¡Hola, me gustaría recibir asesoría gratuita y opciones para invertir en bienes raíces!" class="text inversionisto-tracking">Pulsa aqu&iacute; y accede a nuestras mejores opciones</a>><br />
+      <a target="_blank" data-origin="0" data-agent="<?php echo $post->post_author ?>" data-source="WhatsApp" data-ip="<?php echo $_SERVER['REMOTE_ADDR'] ?>" href="https://wa.me/18098041718?text=¡Hola, me gustaría recibir asesoría gratuita y opciones para invertir en bienes raíces!" class="btn inversionisto-tracking"><i class="fab fa-whatsapp"></i> Recibir opciones via WhatsApp</a>
     </div>
   </section>
   <section class="featured">
@@ -133,7 +133,7 @@ get_header();
   </section>
 
   <div style="clear: both;"></div>
-  <section class="newsletter">
+  <section class="newsletter d-none">
     <div class="newsletter-form">
       <div class="section-title">
         <h4><?php _e('Recibe nuestras mejores ofertas') ?></h4>
